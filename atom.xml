@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-02-11T00:21:22.347Z</updated>
+  <updated>2021-02-11T16:04:16.776Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客技巧：提升博客访问速度</title>
+    <link href="https://amnesia-f.github.io/posts/241519a2.html"/>
+    <id>https://amnesia-f.github.io/posts/241519a2.html</id>
+    <published>2021-02-11T14:38:52.000Z</published>
+    <updated>2021-02-11T16:04:16.776Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前说到，GitHub的服务器在国外较慢，虽然可以使用JSDeliver加速文件，但是效果并不是很明显，速度没有得到明显提升，这篇文章就讲讲怎么利用hexo-offline-popup插件提升博客访问速度，且还能实现博客更新后弹窗提醒的功能。</p><h1 id="hexo-offline-popup"><a href="#hexo-offline-popup" class="headerlink" title="hexo-offline-popup"></a>hexo-offline-popup</h1><p>hexo-offline-popup 是一个 <a href="https://hexo.io/">hexo</a> 插件， 它可加速您的Hexo网站的加载速度，以及网站内容更新弹窗提示。</p><p>该插件基于停止维护已久的hexo-service-worker插件，并在它的基础上加以改进。</p><blockquote><p>仓库地址： <a href="https://github.com/Colsrch/hexo-offline-popup">https://github.com/Colsrch/hexo-offline-popup</a></p></blockquote><h1 id="食用过程"><a href="#食用过程" class="headerlink" title="食用过程"></a>食用过程</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在Hexo根目录打开<code>Git-bash</code> 输入以下指令进行安装：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-offline-popup --save</span><br></pre></td></tr></table></figure><p>安装后, 运行 <code>hexo clean &amp;&amp; hexo generate</code> 激活插件。</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在博客根目录的 <code>_config.yml</code> 中添加以下配置：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># offline config passed to sw-precache.</span></span><br><span class="line"><span class="attr">service_worker:</span></span><br><span class="line">  <span class="attr">maximumFileSizeToCacheInBytes:</span> <span class="number">5242880</span></span><br><span class="line">  <span class="attr">staticFileGlobs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">public/**/*.&#123;js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2&#125;</span></span><br><span class="line">  <span class="attr">stripPrefix:</span> <span class="string">public</span></span><br><span class="line">  <span class="attr">verbose:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>如果你有CDN资源，例：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">https://cdn.jsdelivr.net/npm/artitalk</span></span><br></pre></td></tr></table></figure><p>将下面的配置追加到刚才添加的配置下面：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">runtimeCaching:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">urlPattern:</span> <span class="string">/*</span>       <span class="comment"># 子路径（接受通配符）</span></span><br><span class="line">    <span class="attr">handler:</span> <span class="string">cacheFirst</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">origin:</span> <span class="string">unpkg.com</span>  <span class="comment"># 域名</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">urlPattern:</span> <span class="string">/npm/*</span>   <span class="comment"># 子路径（接受通配符）</span></span><br><span class="line">    <span class="attr">handler:</span> <span class="string">cacheFirst</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">origin:</span> <span class="string">cdn.jsdelivr.net</span>  <span class="comment"># 域名</span></span><br></pre></td></tr></table></figure><blockquote><p>其中的<code>origin</code>填写你的CDN资源即可</p></blockquote><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>执行下列代码激活并使用：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h3 id="1-本地预览无效果"><a href="#1-本地预览无效果" class="headerlink" title="1.本地预览无效果"></a>1.本地预览无效果</h3><p>该插件仅部署后生效，本地运行不生效。</p><h3 id="2-安装后打开未弹窗"><a href="#2-安装后打开未弹窗" class="headerlink" title="2.安装后打开未弹窗"></a>2.安装后打开未弹窗</h3><p>安装插件后首次打开博客不会弹窗，后续更新将会有弹窗。</p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>更新弹窗仅在博客更新时会弹出，因此留了一个弹窗演示站：</p><blockquote><p>弹窗演示站：<a href="https://pfc049.coding-pages.com/">https://pfc049.coding-pages.com/</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;之前说到，GitHub的服务器在国外较慢，虽然可以使用JSDeliver加速文件，但是效果并不是很明显，速度没有得到明显提升，这篇文章就讲讲</summary>
+      
+    
+    
+    
+    <category term="Hexo博客" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="技巧" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="Hexo" scheme="https://amnesia-f.github.io/tags/Hexo/"/>
+    
+    <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="技巧" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+    <category term="图标" scheme="https://amnesia-f.github.io/tags/%E5%9B%BE%E6%A0%87/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客技巧：使用阿里iconfont图标</title>
@@ -584,36 +616,6 @@
     <category term="搭建博客三部曲" scheme="https://amnesia-f.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%89%E9%83%A8%E6%9B%B2/"/>
     
     <category term="踩坑" scheme="https://amnesia-f.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo搭建个人博客：从开始到放弃</title>
-    <link href="https://amnesia-f.github.io/posts/aea2.html"/>
-    <id>https://amnesia-f.github.io/posts/aea2.html</id>
-    <published>2021-01-21T02:41:34.000Z</published>
-    <updated>2021-02-07T15:03:05.238Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://upimage.alexhchu.com/2021/01/21/0149206606bc5.png" alt="封面"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>这是一个非常悲伤的故事，如标题所言，我已经被这Hexo搞崩溃了，原因就是bug太多…(其实这是篇教程)</p><a id="more"></a><p>不过言归正传，写这篇帖子是为了记录用Hexo搭建个人博客的过程的，也算是一个教程，仅是为了n年后我心血来潮又想搭建起博客时能有个正确的教程。</p><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h1><h3 id="GitHub-Pages-是什么？"><a href="#GitHub-Pages-是什么？" class="headerlink" title="GitHub Pages 是什么？"></a><strong>GitHub Pages 是什么？</strong></h3><ul><li><a href="https://help.github.com/en/articles/what-is-github-pages">What is GitHub Pages? - GitHub Help</a></li></ul><p>GitHub Pages 是由 GitHub 官方提供的一种免费的静态站点托管服务，让我们可以在 GitHub 仓库里托管和发布自己的静态网站页面。</p><h3 id="Hexo-是什么？"><a href="#Hexo-是什么？" class="headerlink" title="Hexo 是什么？"></a><strong>Hexo 是什么？</strong></h3><ul><li>官网：<a href="https://hexo.io/zh-cn/">hexo.io</a></li></ul><p>Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 运行，可以将我们撰写的 Markdown 文档解析渲染成静态的 HTML 网页。</p><h3 id="Hexo-GitHub-文章发布原理"><a href="#Hexo-GitHub-文章发布原理" class="headerlink" title="Hexo + GitHub 文章发布原理"></a><strong>Hexo + GitHub 文章发布原理</strong></h3><p>在本地撰写 Markdown 格式文章后，通过 Hexo 解析文档，渲染生成具有主题样式的 HTML 静态网页，再推送到 GitHub 上完成博文的发布。</p><p><img src="https://upimage.alexhchu.com/2021/01/21/3a1339324970c.jpg" alt="流程图.jpg"></p><h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a><strong>优缺点</strong></h1><p>使用GitHub Pages来搭建Hexo静态博客网站的优点有很多，同时它的缺点也不少：</p><ul><li>零成本，不需购买服务器、域名，一切都托管在Github上；</li><li>不需维护且稳定，搭建完成后过几年再看你的文章可能还在；</li><li>方便，官方提供了很多现成的框架可以直接使用。</li></ul><p>缺点：</p><ul><li>搭建过程繁杂，需要搭建环境，容易出错；</li><li>国内访问可能会稍慢，不过可以设置通过国内服务器访问；</li><li>静态网页，每次改动都需要手动上传。</li></ul><h1 id="搭建步骤一：在GitHub创建个人仓库"><a href="#搭建步骤一：在GitHub创建个人仓库" class="headerlink" title="搭建步骤一：在GitHub创建个人仓库"></a><strong>搭建步骤一：在GitHub创建个人仓库</strong></h1><ol><li>注册一个GitHub账号：<a href="https://github.com/">GitHub</a></li><li>注册成功登录后，点击右上角加号然后再点击“New repository”</li><li>Repository name填 <strong>“你的GitHub用户名”.github.io</strong>（如下图）</li><li>勾选Add a README file</li></ol><p><img src="https://upimage.alexhchu.com/2021/01/21/4e6e17b1d23db.png" alt="新建仓库.png"></p><h1 id="搭建步骤二：配置本地环境"><a href="#搭建步骤二：配置本地环境" class="headerlink" title="搭建步骤二：配置本地环境"></a><strong>搭建步骤二：配置本地环境</strong></h1><p>Hexo 基于 Node.js，搭建过程中还需要使用 npm（Node.js 已带） 和 git，因此先搭建本地操作环境，安装 Node.js 和 Git。</p><ul><li>Node.js：<a href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li><li>Git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li></ul><p>下载 Node.js 和 Git 程序并安装，一路点 “下一步” 按默认配置完成安装。</p><p>安装完成后，Win+R 输入 cmd 并打开，依次输入： </p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure><p>后回车，如下图出现程序版本号即可。</p><p><img src="https://upimage.alexhchu.com/2021/01/21/c2811dc2ce0a2.png" alt="版本号.png"></p><h1 id="搭建步骤三：配置Git连接GitHub"><a href="#搭建步骤三：配置Git连接GitHub" class="headerlink" title="搭建步骤三：配置Git连接GitHub"></a><strong>搭建步骤三：配置Git连接GitHub</strong></h1><p>1.鼠标右键打开Git Bash：</p><p><img src="https://upimage.alexhchu.com/2021/01/21/6735f35ce37ed.png" alt="右键.png"></p><p>2.输入命令配置用户名和邮箱信息：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure><p>3.生成ssh密钥文件：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱”</span><br></pre></td></tr></table></figure><p>其中有个y/n的选项，输入y后一路回车即可；</p><p>4.添加密匙：</p><ul><li>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），打开公钥 id_rsa.pub 文件并复制里面的内容。</li><li>打开GitHub的SSH设置页面：<a href="https://github.com/settings/keys">SSH and GPG keys</a></li><li>New SSH key，Title任取，Key粘贴刚刚复制的字符串，Add SSH key</li></ul><p><img src="https://upimage.alexhchu.com/2021/01/21/9731f759c0eda.png" alt="SSH keys.png"></p><p>5.验证连接：</p><p>打开 Git Bash，输入</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><p>出现：<img src="https://upimage.alexhchu.com/2021/01/21/86ec0fb35966b.png" alt="连接成功.png"></p><p>显示 “Hi xxx! You’ve successfully……” 即连接成功。</p><h1 id="搭建步骤四：本地安装Hexo博客程序"><a href="#搭建步骤四：本地安装Hexo博客程序" class="headerlink" title="搭建步骤四：本地安装Hexo博客程序"></a><strong>搭建步骤四：本地安装Hexo博客程序</strong></h1><p>1.安装 Hexo：</p><p>在你的电脑硬盘上新建一个文件夹，命名为你自己想要的名字，这个文件夹是用来储存博客文件的，例如我存放在<code>D:\Files\Hexo</code></p><p>在刚才新建的文件夹空白处右键，点击<code>Git Bash</code>，使用 npm 命令一键安装 Hexo 博客程序：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>（安装时间有点久，界面也没任何反应，耐心等待）</p><p>2.Hexo 初始化和本地预览：</p><ul><li>初始化并安装所需组件：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init       # 初始化</span><br><span class="line">npm install     # 安装组件</span><br></pre></td></tr></table></figure><ul><li>完成后依次输入下面命令，启动本地服务器进行预览：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g         # 生成页面</span><br><span class="line">hexo s         # 启动预览</span><br></pre></td></tr></table></figure><p>3.访问 <a href="http://localhost:4000/">http://localhost:4000</a>，出现 Hexo 默认页面，本地博客安装成功！</p><p><img src="https://upimage.alexhchu.com/2021/01/21/6e09abc7e116a.png" alt="本地界面.png"></p><p><strong>Tips</strong>：如果出现页面加载不出来，可能是端口被占用了，Ctrl+C 关闭服务器，运行 <em>hexo server -p 5000</em> 更改端口号后重试。</p><h1 id="搭建步骤五：部署-Hexo-到-GitHub-Pages"><a href="#搭建步骤五：部署-Hexo-到-GitHub-Pages" class="headerlink" title="搭建步骤五：部署 Hexo 到 GitHub Pages"></a><strong>搭建步骤五：部署 Hexo 到 GitHub Pages</strong></h1><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问。</p><ol><li>首先安装 <strong>hexo-deployer-git</strong>：</li></ol><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><p>​      2.然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:用户名&#x2F;用户名.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure><p>3.完成后运行 hexo d 将网站上传部署到 GitHub Pages，这时访问我们的 GitHub 域名 https://用户名.github.io 就可以看到 Hexo 网站了。</p><p><strong>搭建到这里就已经完成了</strong></p><h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;      # 新建文章</span><br><span class="line"></span><br><span class="line">hexo new page &quot;name&quot; # 新建页面</span><br><span class="line"></span><br><span class="line">hexo g               # 生成页面</span><br><span class="line">  </span><br><span class="line">hexo d               # 部署</span><br><span class="line"></span><br><span class="line">hexo g -d            # 生成页面并部署</span><br><span class="line"></span><br><span class="line">hexo s               # 本地预览</span><br><span class="line"></span><br><span class="line">hexo clean           # 清除缓存和已生成的静态文件</span><br><span class="line"></span><br><span class="line">hexo help            # 帮助</span><br></pre></td></tr></table></figure><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a><strong>结语</strong></h1><p>我曾在2020年7月份成功部署过一个Hexo搭建的博客，只不过后来因为文件丢失所以无法接着写了，本想趁热打铁再部署一个同样的，奈何学业繁忙没有时间，昨天考完试后从昨晚到现在弄了一天一个晚上，bug层出不穷：</p><p><img src="https://upimage.alexhchu.com/2021/01/21/b500b3c2be871.png" alt="error.png"></p><p>本地预览却又是这样：</p><p><img src="https://upimage.alexhchu.com/2021/01/21/6c7e6a0397380.png" alt="错误.png"></p><p>迫使我放弃了搭建这个博客的念头…</p><p>再欣赏下之前的博客吧：</p><p><img src="https://upimage.alexhchu.com/2021/01/21/128a69e39c5bf.png" alt="界面.png"></p><p><img src="https://upimage.alexhchu.com/2021/01/21/bb3cc97db77bc.png" alt="第一篇.png"></p><p><img src="https://upimage.alexhchu.com/2021/01/21/16b8252ec9edd.png" alt="第二篇.png"></p><p>主题是用的<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a>，我的项目地址：<a href="https://github.com/Amnesia-f/amnesia-f.github.io">https://github.com/Amnesia-f/amnesia-f.github.io</a></p><p><img src="https://upimage.alexhchu.com/2021/01/21/40dfdb4e4d1f4.png" alt="仓库图.png"></p><p>最后放个我认为不错的网址：</p><ul><li><a href="https://pic.alexhchu.com/">晚风图床</a>（之前愣是不会用图床，博客上的图片全是默认）</li></ul><p>关于搭建Hexo博客过程中我遇到的各种坑，会另起一篇来阐述…</p><h1 id="End"><a href="#End" class="headerlink" title="End"></a><strong>End</strong></h1>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://upimage.alexhchu.com/2021/01/21/0149206606bc5.png&quot; alt=&quot;封面&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;这是一个非常悲伤的故事，如标题所言，我已经被这Hexo搞崩溃了，原因就是bug太多…(其实这是篇教程)&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Hexo博客" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="搭建" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://amnesia-f.github.io/tags/Hexo/"/>
-    
-    <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="教程" scheme="https://amnesia-f.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="搭建博客三部曲" scheme="https://amnesia-f.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%89%E9%83%A8%E6%9B%B2/"/>
     
   </entry>
   

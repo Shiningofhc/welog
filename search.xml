@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Hexo博客技巧：提升博客访问速度</title>
+      <link href="posts/241519a2.html"/>
+      <url>posts/241519a2.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>之前说到，GitHub的服务器在国外较慢，虽然可以使用JSDeliver加速文件，但是效果并不是很明显，速度没有得到明显提升，这篇文章就讲讲怎么利用hexo-offline-popup插件提升博客访问速度，且还能实现博客更新后弹窗提醒的功能。</p><h1 id="hexo-offline-popup"><a href="#hexo-offline-popup" class="headerlink" title="hexo-offline-popup"></a>hexo-offline-popup</h1><p>hexo-offline-popup 是一个 <a href="https://hexo.io/">hexo</a> 插件， 它可加速您的Hexo网站的加载速度，以及网站内容更新弹窗提示。</p><p>该插件基于停止维护已久的hexo-service-worker插件，并在它的基础上加以改进。</p><blockquote><p>仓库地址： <a href="https://github.com/Colsrch/hexo-offline-popup">https://github.com/Colsrch/hexo-offline-popup</a></p></blockquote><h1 id="食用过程"><a href="#食用过程" class="headerlink" title="食用过程"></a>食用过程</h1><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在Hexo根目录打开<code>Git-bash</code> 输入以下指令进行安装：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i hexo-offline-popup --save</span><br></pre></td></tr></table></figure><p>安装后, 运行 <code>hexo clean &amp;&amp; hexo generate</code> 激活插件。</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>在博客根目录的 <code>_config.yml</code> 中添加以下配置：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># offline config passed to sw-precache.</span></span><br><span class="line"><span class="attr">service_worker:</span></span><br><span class="line">  <span class="attr">maximumFileSizeToCacheInBytes:</span> <span class="number">5242880</span></span><br><span class="line">  <span class="attr">staticFileGlobs:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">public/**/*.&#123;js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2&#125;</span></span><br><span class="line">  <span class="attr">stripPrefix:</span> <span class="string">public</span></span><br><span class="line">  <span class="attr">verbose:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p>如果你有CDN资源，例：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">https://cdn.jsdelivr.net/npm/artitalk</span></span><br></pre></td></tr></table></figure><p>将下面的配置追加到刚才添加的配置下面：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">runtimeCaching:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">urlPattern:</span> <span class="string">/*</span>       <span class="comment"># 子路径（接受通配符）</span></span><br><span class="line">    <span class="attr">handler:</span> <span class="string">cacheFirst</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">origin:</span> <span class="string">unpkg.com</span>  <span class="comment"># 域名</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">urlPattern:</span> <span class="string">/npm/*</span>   <span class="comment"># 子路径（接受通配符）</span></span><br><span class="line">    <span class="attr">handler:</span> <span class="string">cacheFirst</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">origin:</span> <span class="string">cdn.jsdelivr.net</span>  <span class="comment"># 域名</span></span><br></pre></td></tr></table></figure><blockquote><p>其中的<code>origin</code>填写你的CDN资源即可</p></blockquote><h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><p>执行下列代码激活并使用：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h3 id="1-本地预览无效果"><a href="#1-本地预览无效果" class="headerlink" title="1.本地预览无效果"></a>1.本地预览无效果</h3><p>该插件仅部署后生效，本地运行不生效。</p><h3 id="2-安装后打开未弹窗"><a href="#2-安装后打开未弹窗" class="headerlink" title="2.安装后打开未弹窗"></a>2.安装后打开未弹窗</h3><p>安装插件后首次打开博客不会弹窗，后续更新将会有弹窗。</p><h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p>更新弹窗仅在博客更新时会弹出，因此留了一个弹窗演示站：</p><blockquote><p>弹窗演示站：<a href="https://pfc049.coding-pages.com/">https://pfc049.coding-pages.com/</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo博客 </category>
+          
+          <category> 技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> 图标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客技巧：使用阿里iconfont图标</title>
       <link href="posts/947ec48e.html"/>
       <url>posts/947ec48e.html</url>
