@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>Hexo博客技巧：使用阿里iconfont图标</title>
+      <link href="posts/947ec48e.html"/>
+      <url>posts/947ec48e.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>虽然Butterfly主题支持直接调用font-awesome v5图标，但是Font Awesome无论是v4还是v5支持的图标都太少了，关于国内平台的图标几乎是寥寥无几。</p><p>所以便想到可以使用阿里iconfont图标库，但官方文档中并没有介绍用法，于是只能自己来了。</p><h1 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h1><h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><p>进入<a href="https://www.iconfont.cn/">阿里 iconfont 图标库</a>，寻找你想要的图标，并且将鼠标悬停在图标上，点击购物车图标。如下图：</p><p><img src="https://upimage.alexhchu.com/2021/02/10/c000728ee68ed.png" alt="添加入库.png"></p><p>将你所有需要用到的图标添加入库后，点击网站右上角的购物车图标：</p><p><img src="https://upimage.alexhchu.com/2021/02/10/8ebfc0b701bf7.png" alt="点击购物车.png"></p><p>然后点击添加至项目：<img src="https://upimage.alexhchu.com/2021/02/10/b8bfd4f5dcb29.png" alt="添加至项目.png"></p><p>然后你就会来到一下界面，选择<code>Font class</code>模式，点击查看在线链接：</p><p><img src="https://upimage.alexhchu.com/2021/02/10/f73160a41561c.png" alt="生成代码.png"></p><p><img src="https://cdn.jsdelivr.net/gh/blogimg/picbed@latest/2020/05/07/31456e515509653eebbf27aae2ce2340.png" alt="gif演示"></p><p>得到在线链接后粘贴到浏览器打开，可以得到一个css文件，里面有刚才添加的图标的样式，右键另存为到<code>\themes\Butterfly\source\css\</code>文件夹：</p><p><img src="https://upimage.alexhchu.com/2021/02/10/3c6f46ad5bc7f.png" alt="查看代码.png"></p><p><img src="https://upimage.alexhchu.com/2021/02/10/0e6b6ebfe79eb.png" alt="另存为路径.png"></p><h1 id="引用文件"><a href="#引用文件" class="headerlink" title="引用文件"></a>引用文件</h1><p>不同主题引入外部 css/js 的方法都不相同，请参考你所使用主题引入外部样式的设置，这里以Butterfly主题为例：</p><p><img src="https://upimage.alexhchu.com/2021/02/10/f34cf0c72fce9.png" alt="引入css.png"></p><h1 id="使用-iconfont"><a href="#使用-iconfont" class="headerlink" title="使用 iconfont"></a>使用 iconfont</h1><p>引入css文件后，配置主题文件<code>_config.butterfly.yml</code>，</p><p>直接写阿里提供的样式即可：</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">iconfont  iconbilibili:</span> <span class="string">https://www.bilibili.com</span></span><br></pre></td></tr></table></figure><p><img src="https://upimage.alexhchu.com/2021/02/10/359856c4bfc4e.png" alt="配置文件.png"></p><blockquote><p>其中前面的<code>iconfont</code>为你的css文件名</p></blockquote><p>如果觉得图标小，可以在css文件中更改：</p><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.iconfont</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&quot;iconfont&quot;</span> <span class="meta">!important</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</span><br><span class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo博客 </category>
+          
+          <category> 技巧 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 博客 </tag>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> 图标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客技巧：利用JsDeliver加速文件</title>
       <link href="posts/20b3.html"/>
       <url>posts/20b3.html</url>
