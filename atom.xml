@@ -40,11 +40,11 @@
     
     <category term="Hexo" scheme="https://amnesia-f.github.io/tags/Hexo/"/>
     
-    <category term="图标" scheme="https://amnesia-f.github.io/tags/%E5%9B%BE%E6%A0%87/"/>
-    
     <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="技巧" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
+    
+    <category term="图标" scheme="https://amnesia-f.github.io/tags/%E5%9B%BE%E6%A0%87/"/>
     
   </entry>
   
@@ -189,9 +189,9 @@
     <category term="系统增强" scheme="https://amnesia-f.github.io/categories/Windows/%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%BC%BA/"/>
     
     
-    <category term="系统增强" scheme="https://amnesia-f.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%BC%BA/"/>
-    
     <category term="Windows" scheme="https://amnesia-f.github.io/tags/Windows/"/>
+    
+    <category term="系统增强" scheme="https://amnesia-f.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%BC%BA/"/>
     
   </entry>
   
@@ -218,9 +218,9 @@
     <category term="系统镜像" scheme="https://amnesia-f.github.io/categories/Windows/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
     
     
-    <category term="Windows" scheme="https://amnesia-f.github.io/tags/Windows/"/>
-    
     <category term="系统镜像" scheme="https://amnesia-f.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
+    
+    <category term="Windows" scheme="https://amnesia-f.github.io/tags/Windows/"/>
     
   </entry>
   
@@ -457,13 +457,13 @@
     
     <category term="Hexo" scheme="https://amnesia-f.github.io/tags/Hexo/"/>
     
-    <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="技巧" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
-    
     <category term="Aplayer" scheme="https://amnesia-f.github.io/tags/Aplayer/"/>
     
     <category term="音乐" scheme="https://amnesia-f.github.io/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+    <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="技巧" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E5%B7%A7/"/>
     
   </entry>
   
