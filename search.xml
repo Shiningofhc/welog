@@ -24,11 +24,11 @@
             
             <tag> Hexo </tag>
             
+            <tag> 图标 </tag>
+            
             <tag> 博客 </tag>
             
             <tag> 技巧 </tag>
-            
-            <tag> 图标 </tag>
             
         </tags>
       
@@ -175,9 +175,9 @@
       
         <tags>
             
-            <tag> Windows </tag>
-            
             <tag> 系统增强 </tag>
+            
+            <tag> Windows </tag>
             
         </tags>
       
@@ -204,9 +204,9 @@
       
         <tags>
             
-            <tag> 系统镜像 </tag>
-            
             <tag> Windows </tag>
+            
+            <tag> 系统镜像 </tag>
             
         </tags>
       
@@ -446,13 +446,13 @@
             
             <tag> Hexo </tag>
             
-            <tag> Aplayer </tag>
-            
-            <tag> 音乐 </tag>
-            
             <tag> 博客 </tag>
             
             <tag> 技巧 </tag>
+            
+            <tag> Aplayer </tag>
+            
+            <tag> 音乐 </tag>
             
         </tags>
       
