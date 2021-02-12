@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>SIoT：连接AppInventor和Mind+</title>
+      <link href="posts/bc3531cf.html"/>
+      <url>posts/bc3531cf.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>文：廖启文</p></blockquote><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>首先，下载</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cba.png"></p><p>并将其解压，解压之后会得到一个文件夹。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8ca6.png"></p><p> 点击文件夹找到名为SIoT_windows_1_2的文件并打开，就会得到一个小黑窗。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cad.png"></p><p>  第二步，在键盘上点击“开始”键+R键，当屏幕左下角出现弹窗的时候点击“回车”键会出现一个小黑窗。随后在小黑窗里输入“ipconfig”之后点击回车键以便得到自己电脑的IP地址。（注意：一定要在电脑连上网时操作！）</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8caa.png"></p><p>之后在浏览器的网站栏上输入：192.168.100.2：8080（注意：192.168.100.2不是你电脑的IP地址，自己的IP地址要自己找！）将末尾的8080改成8888可以使用离线版的本地APPinventor，但是要提前打开文件：</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cb4.png"></p><p>之后等待第一个黑窗说出Server running即可。</p><p>输入：192.168.100.2:8080之后就可以得到SIOT的网页，用户名：siot 密码：dfrobot</p><p>  第三步，将Mind+里的物联网模块设置为：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66e.png"></p><p>wifi是自己的wifi，Iot-pwd输入的是siot网页上的密码，也就是dfrobot。Topic输入的是siot里的项目ID和名称。输入的格式为：项目ID/名称。之后Mind+就可以连接到电脑端了。</p><p>  第四步，连接APPinventor。连接之前先要在APPinventor里导入MqttTCP1，代码是这样的：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66b.png"></p><p>接收的topic要用一个单独的topic。</p><p>  最后就是手机端的操作：</p><p><img src="https://img.imgdb.cn/item/6026a1f03ffa7d37b3ceb669.png"></p><p>IP地址就是你自己电脑的IP地址，用户名称和密码其实就是你本地的SIOT网站上的名称和密码。topic其实就是SIOT端的topic。（连接成功之后不要关闭电脑端的运行工作，否则可能会导致连接失败！）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IoT物联网 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 物联网 </tag>
+            
+            <tag> SIoT </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客技巧：提升博客访问速度</title>
       <link href="posts/241519a2.html"/>
       <url>posts/241519a2.html</url>

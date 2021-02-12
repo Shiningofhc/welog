@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-02-11T16:39:48.158Z</updated>
+  <updated>2021-02-12T15:54:03.537Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SIoT：连接AppInventor和Mind+</title>
+    <link href="https://amnesia-f.github.io/posts/bc3531cf.html"/>
+    <id>https://amnesia-f.github.io/posts/bc3531cf.html</id>
+    <published>2021-02-12T15:31:15.000Z</published>
+    <updated>2021-02-12T15:54:03.537Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>文：廖启文</p></blockquote><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>首先，下载</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cba.png"></p><p>并将其解压，解压之后会得到一个文件夹。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8ca6.png"></p><p> 点击文件夹找到名为SIoT_windows_1_2的文件并打开，就会得到一个小黑窗。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cad.png"></p><p>  第二步，在键盘上点击“开始”键+R键，当屏幕左下角出现弹窗的时候点击“回车”键会出现一个小黑窗。随后在小黑窗里输入“ipconfig”之后点击回车键以便得到自己电脑的IP地址。（注意：一定要在电脑连上网时操作！）</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8caa.png"></p><p>之后在浏览器的网站栏上输入：192.168.100.2：8080（注意：192.168.100.2不是你电脑的IP地址，自己的IP地址要自己找！）将末尾的8080改成8888可以使用离线版的本地APPinventor，但是要提前打开文件：</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cb4.png"></p><p>之后等待第一个黑窗说出Server running即可。</p><p>输入：192.168.100.2:8080之后就可以得到SIOT的网页，用户名：siot 密码：dfrobot</p><p>  第三步，将Mind+里的物联网模块设置为：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66e.png"></p><p>wifi是自己的wifi，Iot-pwd输入的是siot网页上的密码，也就是dfrobot。Topic输入的是siot里的项目ID和名称。输入的格式为：项目ID/名称。之后Mind+就可以连接到电脑端了。</p><p>  第四步，连接APPinventor。连接之前先要在APPinventor里导入MqttTCP1，代码是这样的：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66b.png"></p><p>接收的topic要用一个单独的topic。</p><p>  最后就是手机端的操作：</p><p><img src="https://img.imgdb.cn/item/6026a1f03ffa7d37b3ceb669.png"></p><p>IP地址就是你自己电脑的IP地址，用户名称和密码其实就是你本地的SIOT网站上的名称和密码。topic其实就是SIOT端的topic。（连接成功之后不要关闭电脑端的运行工作，否则可能会导致连接失败！）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;文：廖启文&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;首先，下载&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https:/</summary>
+      
+    
+    
+    
+    <category term="IoT物联网" scheme="https://amnesia-f.github.io/categories/IoT%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    
+    <category term="物联网" scheme="https://amnesia-f.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
+    
+    <category term="SIoT" scheme="https://amnesia-f.github.io/tags/SIoT/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客技巧：提升博客访问速度</title>
@@ -583,37 +613,6 @@
     <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
     <category term="搭建博客三部曲" scheme="https://amnesia-f.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%89%E9%83%A8%E6%9B%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo搭建个人博客：从放弃到踩坑</title>
-    <link href="https://amnesia-f.github.io/posts/f663.html"/>
-    <id>https://amnesia-f.github.io/posts/f663.html</id>
-    <published>2021-01-21T07:39:00.000Z</published>
-    <updated>2021-01-28T14:42:03.979Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://upimage.alexhchu.com/2021/01/21/0149206606bc5.png" alt="封面"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h1><p>相信每一位使用Hexo搭建博客的博主在搭建过程中都踩过大大小小的坑…如果官方文档有解决方法的话还好办，没有就只能老老实实去百度了…</p><p>经过两天的努力，我的博客终于搭成了，下面就盘点下我所踩过的坑吧…</p><a id="more"></a><p>遇到坑后建议先寻找官方的文档，看看里面有没有解决方案：</p><ul><li><a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></li><li><a href="https://butterfly.js.org/posts/98d20436/">Butterfly主题问答</a>（这个是我所用主题的问答）</li></ul><h1 id="那些“坑”："><a href="#那些“坑”：" class="headerlink" title="那些“坑”："></a>那些“坑”：</h1><h3 id="1-运行后网页显示代码："><a href="#1-运行后网页显示代码：" class="headerlink" title="1.运行后网页显示代码："></a>1.运行后网页显示代码：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">extends includes&#x2F;layout.pug block content #recent-posts.recent-posts include includes&#x2F;recent-posts.pug include includes&#x2F;pagination.pug #aside_content.aside_content include includes&#x2F;aside.pug</span><br></pre></td></tr></table></figure><p><img src="https://upimage.alexhchu.com/2021/01/21/6c7e6a0397380.png" alt="错误.png"></p><ul><li>下载安装：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><p> or </p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;yarn add hexo-renderer-pug hexo-renderer-stylus</span><br></pre></td></tr></table></figure><h3 id="2-部署后提示：ERROR-Deployer-not-found-git"><a href="#2-部署后提示：ERROR-Deployer-not-found-git" class="headerlink" title="2.部署后提示：ERROR Deployer not found: git"></a>2.部署后提示：ERROR Deployer not found: git</h3><ul><li>下面两种方法，第一种不行就用第二种：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install &#96;--&#96;save hexo-deployer-git</span><br></pre></td></tr></table></figure><p>or</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><h3 id="3-提示hexo-INFO-Validating-config"><a href="#3-提示hexo-INFO-Validating-config" class="headerlink" title="3.提示hexo INFO Validating config"></a>3.提示hexo INFO Validating config</h3><ul><li>下载安装</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><p>如果还不行就检查你的站点配置文件_config.yml中最后部署到GitHub的分支</p><p>从2020.10.1开始github默认分支从master改为了main，许多旧教程还是还是默认master，将master改为main即可：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:用户名&#x2F;用户名.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure><h3 id="4-提示什么我忘记记录下来了，总之是因为版本过低"><a href="#4-提示什么我忘记记录下来了，总之是因为版本过低" class="headerlink" title="4.提示什么我忘记记录下来了，总之是因为版本过低"></a>4.提示什么我忘记记录下来了，总之是因为版本过低</h3><p>检查你的Node.js及Git版本是否为最新版：</p><ul><li>Node.js：<a href="https://nodejs.org/zh-cn">https://nodejs.org/zh-cn</a></li><li>Git：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li></ul><p>Win+R 输入 cmd 并打开，依次输入： </p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line">git --version</span><br></pre></td></tr></table></figure><p>后回车，检查程序版本号；</p><p><img src="https://upimage.alexhchu.com/2021/01/21/c2811dc2ce0a2.png" alt="版本号.png"></p><h3 id="5-Butterfly主题无导航菜单和社交图标"><a href="#5-Butterfly主题无导航菜单和社交图标" class="headerlink" title="5.Butterfly主题无导航菜单和社交图标"></a>5.Butterfly主题无导航菜单和社交图标</h3><ul><li>在主题配置文件_config.butterfly.yml中删除相应代码前的#号，如下：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">   主页: &#x2F; || fas fa-home</span><br><span class="line">   时间轴: &#x2F;archives&#x2F; || fas fa-archive</span><br><span class="line">   标签: &#x2F;tags&#x2F; || fas fa-tags</span><br><span class="line">   分类: &#x2F;categories&#x2F; || fas fa-folder-open</span><br><span class="line">   清单||fas fa-list:</span><br><span class="line">     - 音乐 || &#x2F;music&#x2F; || fas fa-music</span><br><span class="line">     - 电影 || &#x2F;movies&#x2F; || fas fa-video</span><br><span class="line">   友链: &#x2F;link&#x2F; || fas fa-link</span><br><span class="line">   关于: &#x2F;about&#x2F; || fas fa-heart</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># social settings (社交圖標設置)</span><br><span class="line"># formal:</span><br><span class="line"># icon: link || the description</span><br><span class="line">social:</span><br><span class="line">   fab fa-github: https:&#x2F;&#x2F;github.com&#x2F;xxxxxx || Github</span><br><span class="line">   fas fa-envelope: mailto:xxxxxx@gmail.com || Email</span><br></pre></td></tr></table></figure><h3 id="6-安装Aplayer时报错"><a href="#6-安装Aplayer时报错" class="headerlink" title="6.安装Aplayer时报错"></a>6.安装Aplayer时报错</h3><p><img src="https://img.imgdb.cn/item/600c303f3ffa7d37b3d9fa2d.png" alt="安装Aplayer报错"></p><ul><li>步骤一：删除C:\Users{账户}\下的<code>.npmrc</code>文件…<br>注意：这个文件默认是被隐藏的，需要选择将隐藏取消掉才能看见</li><li>步骤二：执行以下命令进行清理：</li></ul><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure><p>​          但是会报以下错误：</p><p><img src="https://img.imgdb.cn/item/600c30403ffa7d37b3d9fa63.png" alt="clean报错"></p><p>​         解决方法：将博客根目录下的<code>node_modules</code>全部删除后再执行步骤二命令即可！</p><h3 id="7-运行hexo-d时提示client-loop-send-disconnect-Connection-reset-by-peer"><a href="#7-运行hexo-d时提示client-loop-send-disconnect-Connection-reset-by-peer" class="headerlink" title="7.运行hexo d时提示client_loop: send disconnect: Connection reset by peer"></a>7.运行<code>hexo d</code>时提示client_loop: send disconnect: Connection reset by peer</h3><p>如图：</p><p><img src="https://img.imgdb.cn/item/601236fb3ffa7d37b39aca75.png"></p><p>原因：http.postBuffer默认上限为1M</p><p>运行以下代码将上限改大就行：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure><p>之后便能成功上传了！</p><h3 id="8-上传时提示fatal-Could-not-read-from-remote-repository-Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists"><a href="#8-上传时提示fatal-Could-not-read-from-remote-repository-Please-make-sure-you-have-the-correct-access-rights-and-the-repository-exists" class="headerlink" title="8.上传时提示fatal: Could not read from remote repository.Please make sure you have the correct access rights and the repository exists."></a>8.上传时提示fatal: Could not read from remote repository.Please make sure you have the correct access rights and the repository exists.</h3><p>hexo d时报错：</p><p><img src="https://img.imgdb.cn/item/6012cb413ffa7d37b3f24fc6.png"></p><p>发现是和仓库的连接问题，输入<code>ssh -T git@github.com</code>后提示：</p><p><img src="https://img.imgdb.cn/item/6012cb413ffa7d37b3f24fcc.png"></p><p>发现无法连接了，于是重新生成ssh密钥文件：</p><p><img src="https://img.imgdb.cn/item/6012cd173ffa7d37b3f3507b.png"></p><p>再检测一遍连接状态，提示成功后，再次上传即可！</p><p><strong>暂时就这么多…以后遇到问题还会更新的。</strong></p><p>希望这篇博文永远也不用再更新…</p><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://upimage.alexhchu.com/2021/01/21/0149206606bc5.png&quot; alt=&quot;封面&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;&lt;strong&gt;前言&lt;/strong&gt;&lt;/h1&gt;&lt;p&gt;相信每一位使用Hexo搭建博客的博主在搭建过程中都踩过大大小小的坑…如果官方文档有解决方法的话还好办，没有就只能老老实实去百度了…&lt;/p&gt;
-&lt;p&gt;经过两天的努力，我的博客终于搭成了，下面就盘点下我所踩过的坑吧…&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Hexo博客" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="搭建" scheme="https://amnesia-f.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://amnesia-f.github.io/tags/Hexo/"/>
-    
-    <category term="博客" scheme="https://amnesia-f.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="搭建博客三部曲" scheme="https://amnesia-f.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%B8%89%E9%83%A8%E6%9B%B2/"/>
-    
-    <category term="踩坑" scheme="https://amnesia-f.github.io/tags/%E8%B8%A9%E5%9D%91/"/>
     
   </entry>
   
