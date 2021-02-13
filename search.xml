@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>打造U盘系统，Win10随身携带</title>
+      <link href="posts/dfe935b2.html"/>
+      <url>posts/dfe935b2.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>说起U盘装系统，你第一时间想起的是什么？PE系统？今天给大家带来的教程是WinToGo制作方法，将Win10随身携带进U盘，在任何电脑上使用，不用再担心不适应别人的电脑系统了。</p><p>其实从Win8开始，就已经有Win to go了，但是官方的要求太严，制作起来并不是那么的友好，并且对系统的要求很严。所以使用WTG辅助工具来制作U盘。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="WTG辅助工具"><a href="#WTG辅助工具" class="headerlink" title="WTG辅助工具"></a>WTG辅助工具</h2><p><a href="https://www.ghpym.com/wtg.html">WTG辅助工具(WinToGo)v5.5.6</a>：“Windows To Go”，它可以让你将 Windows 完整安装到U盘、移动硬盘等便携设备上，…</p><h2 id="已解密esd系统镜像文件一个"><a href="#已解密esd系统镜像文件一个" class="headerlink" title="已解密esd系统镜像文件一个"></a>已解密esd系统镜像文件一个</h2><p>本站分享的系统，基本上都是esd文件格式的，很方便使用。本教程就不使用官方版本的镜像了，推荐使用第三方的系统。</p><p>目前推荐两个本站第三方系统</p><p>WIN10 SR4：<a href="https://www.ghpym.com/yoswin10rs4.html">https://www.ghpym.com/yoswin10rs4.html</a></p><p>WIN10 LTSC：<a href="https://www.ghpym.com/themrxkltsc1809.html">https://www.ghpym.com/themrxkltsc1809.html</a></p><p>最好使用LTSC版本的系统，因为这个为官方精简版，没有商店，小娜等，使用轻便，不升级。</p><h2 id="U盘一个"><a href="#U盘一个" class="headerlink" title="U盘一个"></a>U盘一个</h2><p>U盘读写速度直接影响到系统的性能。这儿推荐使用64G以上的容量，并且USB接口不低于3.0，2.0的U盘性能会大大降低。</p><p>当然如果是移动硬盘，最好使用固态的。</p><p>果核有两个固态移动硬盘，都是自己拼接的，一个是mSATA硬盘盒，USB3.1 ，一个m2固态，USB3.1 gen2，使用起来性能都相当的出色，和PC直接使用效果一样。</p><p>读写速度不要求太高，但是写速度至少你要50M以上，读取速度至少要100M以上才能避免卡顿。</p><h1 id="制作教程"><a href="#制作教程" class="headerlink" title="制作教程"></a>制作教程</h1><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>下载辅助工具和镜像以后，选择esd文件：</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd271.png" alt="esd文件"></p><p>选择以后，选择esd里面的系统，并且在高级选择中，使用默认配置即可。最好是屏蔽本机硬盘，如果不屏蔽的话，本系统会看到原来电脑上的磁盘，并且占用D,E,F等常用盘符，修改起来麻烦。使用移动硬盘，如果有其他要用的分区，请勿勾选不格式化，取消勾选重新分区，还是建议格式化后再自己去分区。</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd27a.png" alt="部署文件"></p><p>部署以后，稍等会，就能使用了。</p><p>重启电脑，和使用PE一样，选择U盘启动即可，每台电脑U盘启动请自行百度。</p><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>使用移动硬盘制作的wintogo系统，难免需要分出几个盘供使用，制作好的系统，只有一个C盘，如何分区呢？</p><p>这时候，只需要正常的分区即可，在我的电脑-&gt;管理-&gt;磁盘管理器，压缩C盘，为C盘保留一部分，其他的盘就可以分成D,E,F等盘了</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd281.png" alt="分区"></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote><p>本文来自于<a href="https://www.ghpym.com/wintogodoc.html">果壳剥壳</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 系统增强 </tag>
+            
+            <tag> 技术教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Adobe系列软件2017~2020合集</title>
       <link href="posts/c336038a.html"/>
       <url>posts/c336038a.html</url>
