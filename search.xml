@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>论如何管理电脑右键菜单</title>
+      <link href="posts/126239f4.html"/>
+      <url>posts/126239f4.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>随着电脑日常使用的时间增加，软件也会越装越多，Windows系统的右键菜单也会变得臃肿杂乱，许多右键菜单选项不仅多余且浪费宝贵的右键菜单空间，更极其影响美观和降低操作效率。</p><p><img src="https://img.imgdb.cn/item/602b2a9f3ffa7d37b3990162.png" alt="右键菜单"></p><p>下面就来讲讲如何去除无用的右键菜单项，开始对右键菜单大动“刀斧”。</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><blockquote><p>本文所有软件均在文末处有下载链接。</p></blockquote><h2 id="软件设置"><a href="#软件设置" class="headerlink" title="软件设置"></a>软件设置</h2><p>右键菜单从组成上分为系统菜单和应用菜单两大类，其中应用菜单来自系统应用和第三方应用。</p><p>其实，部分第三方应用如WinRAR、HoneyView、WPS等软件设置内就可以管理软件右键菜单选项。</p><p>这里以WinRAR为例，打开WinRAR设置，如下进入软件右键菜单设置页面，根据自己需要勾选即可：</p><p><img src="https://upimage.alexhchu.com/2021/02/16/0571d31c95bf1.png" alt="WinRAR设置.png"></p><p>理想很美好，现实很骨感。事实上，并不是所有第三方软件都拥有这项“贴心”功能，大多数应用菜单和系统菜单都只能通过手动修改注册表或使用右键菜单管理工具来实现增删操作。</p><p>修改注册表即找到相关项删除，普通用户操作起来难度极大，能否找到，能否找全，会不会误删，无论是时间、效率还是安全方面都让人望而止步。所以下面列举了几款常见的右键菜单管理工具来帮助管理、增删、修改右键菜单：</p><h2 id="ContextMenuManager"><a href="#ContextMenuManager" class="headerlink" title="ContextMenuManager"></a>ContextMenuManager</h2><p>ContextMenuManager是一款开源免费的Windows右键菜单管理程序</p><p>GitHub项目地址：<a href="https://github.com/BluePointLilac/ContextMenuManager">https://github.com/BluePointLilac/ContextMenuManager</a></p><p>软件为单文件，依据系统类型分为Win7版和Win10版，支持简体中文。</p><h3 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h3><ul><li>启用或禁用文件、文件夹、新建、发送到、打开方式、自定义文件格式等右键菜单项目</li><li>对上述场景右键菜单项目进行修改名称、修改图标、导航注册表位置、导航文件位置、永久删除等操作</li><li>对上述场景右键菜单自定义添加项目，自定义菜单命令</li></ul><h3 id="兼容性能"><a href="#兼容性能" class="headerlink" title="兼容性能"></a>兼容性能</h3><ul><li>适用于Win7、8、8.1、10、Vista</li><li>适用于 x64、x32 CPU 操作系统</li><li>适用于高分屏，最佳显示缩放比为150%</li><li>程序支持国际化多语言显示</li></ul><p><img src="https://img.imgdb.cn/item/602b2c3e3ffa7d37b399ab31.png" alt="ContextMenuManager运行截图"></p><blockquote><p>此软件推荐小白使用，功能相较于下面的RightMenuMgr来说逊色许多。</p></blockquote><h2 id="RightMenuMgr"><a href="#RightMenuMgr" class="headerlink" title="RightMenuMgr"></a>RightMenuMgr</h2><p>RightMenuMgr是一款经典的右键菜单管理工具，虽然软件比较老（最后更新于2010年），但就目前而言依旧强大、方便、好用。</p><p>和ContextMenuManager一样，RightMenuMgr依据不同场景右键菜单分门别类，简明直观。RightMenuMgr检索到的右键菜单项目比ContextMenuManager丰富全面，但项目名称为英文，需要一定识别能力。</p><p><img src="https://img.imgdb.cn/item/602b2dd33ffa7d37b39a4872.png" alt="RightMenuMgr运行截图"></p><blockquote><p>此软件功能较全，清理右键菜单首选！</p></blockquote><h2 id="RightClickEnhancer"><a href="#RightClickEnhancer" class="headerlink" title="RightClickEnhancer"></a>RightClickEnhancer</h2><p>RightClickEnhancer是一款极其强大的右键菜单管理工具，通过它我们可以完全自由控制右键菜单，真正打造属于自己的右键菜单。</p><p>RightClickEnhancer分为免费版和专业版，免费版大部分功能受限，滴答提供的为RightClickEnhancer v4.5.6专业修改版，为便携软件，直接打开即可使用。</p><p>RightClickEnhancer包含9大功能，下面着重介绍其中三大核心功能，其它自行使用了解。</p><p><img src="https://upimage.alexhchu.com/2021/02/16/c8fe32616f6b8.png" alt="RightClickEnhancer运行截图.png"></p><h3 id="Right-Click-Editor"><a href="#Right-Click-Editor" class="headerlink" title="Right Click Editor"></a>Right Click Editor</h3><p>Right Click Editor能够移除或禁用由其它软件添加的右键菜单项目。打开后会显示所有检索到的右键菜单项，这里以禁用右键菜单“使用画图3D进行编辑”为例：在搜索框内输入相关关键词，然后去掉搜索到的所有的项目前的对勾即可。</p><p><img src="https://upimage.alexhchu.com/2021/02/16/45ec1ef549146.png" alt="RightClickEnhancer1.png"></p><h3 id="Right-Click-Tweaker"><a href="#Right-Click-Tweaker" class="headerlink" title="Right Click Tweaker"></a>Right Click Tweaker</h3><p>Right Click Tweaker能够添加有用的功能到右键菜单。打开后显示软件所提供的所有功能性右键菜单（包含复制到、移动到、上帝模式等），根据自己需求勾选即可。</p><p><img src="https://upimage.alexhchu.com/2021/02/16/2587f457dc322.png" alt="RightClickEnhancer2.png"></p><h3 id="File-Types-Editor"><a href="#File-Types-Editor" class="headerlink" title="File Types Editor"></a>File Types Editor</h3><p>File Types Editor能够添加文件、文件夹、自定义命令到右键菜单以便快速访问。举例如下图设置三级菜单。</p><p><img src="https://upimage.alexhchu.com/2021/02/16/4e9a2efd4425e.png" alt="RightClickEnhancer3.png"></p><blockquote><p>右键菜单功能扩展必备！<code>复制为路径</code>和<code>移动到...</code>功能很提高效率。</p></blockquote><h2 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h2><p>大多数杀毒软件，如火绒、360、电脑管家均有管理右键菜单功能，因为我的电脑是裸奔，没有装任何杀软，所以有兴趣的小伙伴可以自行去摸索尝试。</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>对比上述几款右键菜单管理工具，得到以下结论：</p><ul><li>ContextMenuManager最为直观简便，界面清爽，适合小白使用。</li><li>RightMenuMgr分类较全，清理效果比前者好，首推！</li><li>RightClickEnhancer功能最全，扩展性强。</li></ul><h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><p>下载链接： <span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: #FF7242;color: #fff">点击查看  </button><span class="hide-content">https://wws.lanzous.com/b01tzb6oh </span></span></p><p>链接密码： <span class="hide-inline"><button type="button" class="hide-button button--animated" style>Click  </button><span class="hide-content">Amnesia</span></span></p><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术教程 </tag>
+            
+            <tag> 右键菜单 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>论如何让百度网盘里的视频倍速播放</title>
       <link href="posts/4161854e.html"/>
       <url>posts/4161854e.html</url>
