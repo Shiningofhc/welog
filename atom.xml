@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-02-27T03:28:15.481Z</updated>
+  <updated>2021-02-28T09:43:22.626Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>论如何通过手机指纹解锁电脑</title>
+    <link href="https://amnesia-f.github.io/posts/749a3a09.html"/>
+    <id>https://amnesia-f.github.io/posts/749a3a09.html</id>
+    <published>2021-02-28T06:34:03.000Z</published>
+    <updated>2021-02-28T09:43:22.626Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Windows10是可以直接使用指纹解锁电脑的，但是这只是对有指纹传感器的电脑而言。</p><p>就比如我手上这台笔记本也是没有指纹传感器的，所以不支持设置指纹解锁电脑，但是我又想达到这样的效果，这该怎么办呢？下面就来讲讲如何使用手机指纹的传感器来实现解锁电脑的功能。</p><h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><blockquote><p>下文来自<a href="https://www.ghpym.com/ghgh06.html">果核剥壳：【果核干货应用篇-06】使用手机指纹解锁电脑</a></p></blockquote><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul><li><p>支持指纹解锁的安卓手机一部（需要谷歌的指纹api,一般都有）</p></li><li><p>登录了微软账户的Windows10电脑一台</p></li><li><p>手机端APP：Remote Fingerprint Unlock</p></li><li><p>电脑端软件：finger_unlock_1.0.2</p><blockquote><p>下载地址：<a href="https://yunpan.360.cn/surl_ymuKHXybxNE">https://yunpan.360.cn/surl_ymuKHXybxNE</a></p></blockquote></li></ul><h1 id="食用过程"><a href="#食用过程" class="headerlink" title="食用过程"></a>食用过程</h1><h2 id="安装电脑端软件"><a href="#安装电脑端软件" class="headerlink" title="安装电脑端软件"></a>安装电脑端软件</h2><p>上面的链接中有两个安装包，分别为x86和x64文件，请选择对应文件安装。<br>之后电脑按下Win+L键锁屏，检查电脑左下角的账户处是不是多了一个Fingerprint Unlock的选项；</p><p><img src="https://upimage.alexhchu.com/2021/02/28/93eaa07e14f77.jpg" alt="lock.jpg"></p><h2 id="安装手机端App"><a href="#安装手机端App" class="headerlink" title="安装手机端App"></a>安装手机端App</h2><p>将手机和电脑连接同一局域网，并安装手机APP。</p><h3 id="扫描电脑"><a href="#扫描电脑" class="headerlink" title="扫描电脑"></a>扫描电脑</h3><p>右滑点 SCAN 进入扫描界面：</p><p><img src="https://upimage.alexhchu.com/2021/02/28/2c7750b3e9668.jpg" alt="扫描界面.jpg"></p><h3 id="命名电脑"><a href="#命名电脑" class="headerlink" title="命名电脑"></a>命名电脑</h3><p>命名你搜索到的电脑：</p><p><img src="https://upimage.alexhchu.com/2021/02/28/a219a81eab456.jpg" alt="命名电脑.jpg"></p><h3 id="账号设置"><a href="#账号设置" class="headerlink" title="账号设置"></a>账号设置</h3><p>1.左滑并点击 My Accounts：</p><p><img src="https://upimage.alexhchu.com/2021/02/28/3f2c0c83ba10f.jpg" alt="My Accounts.jpg"></p><p>2.点击ADD ACCOUNT</p><p><img src="https://upimage.alexhchu.com/2021/02/28/3d07f005b0454.jpg" alt="ADD ACCOUNT.jpg"></p><p>3.在下面的界面中,输入你Windows10所用的微软账户邮箱和密码，按下指纹之后点击SAVE：</p><p><img src="https://upimage.alexhchu.com/2021/02/28/9239db5e8ea1b.jpg" alt="SAVE.jpg"></p><p>之后会弹出让你确认一个六位的Session ID，然后点击PROCEED：</p><p><img src="https://upimage.alexhchu.com/2021/02/28/97fa0d091934e.jpg" alt="PROCEED.jpg"></p><h2 id="确认ID"><a href="#确认ID" class="headerlink" title="确认ID"></a>确认ID</h2><p>在电脑上确认一下ID一不一样(这步略啰嗦，基本不会出现不一致的情况，除非你的局域网有多台电脑都准备用这个软件)</p><p><img src="https://upimage.alexhchu.com/2021/02/28/93eaa07e14f77.jpg" alt="lock.jpg"></p><blockquote><p>注意！此时要再次点击一下你的微软账户<a href="mailto:&#x58;&#88;&#88;&#64;&#104;&#x6f;&#116;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#x58;&#88;&#88;&#64;&#104;&#x6f;&#116;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>（如下图），否则 UNLOCK 界面将提示没有默认账户 ！！！</p><p><img src="https://upimage.alexhchu.com/2021/02/28/f37e7320dd99f.png" alt="UNLOCK.png"><img src="https://upimage.alexhchu.com/2021/02/28/8612e3561278f.png" alt="UNLOCK2.png"></p></blockquote><h2 id="尝试解锁"><a href="#尝试解锁" class="headerlink" title="尝试解锁"></a>尝试解锁</h2><p>最后，回到UNLOCK界面，按下指纹，如果你在步骤6输入微软账户和密码正确，即可顺利解锁你的Win10系统！<br>Enjoy it!</p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>1.官方声称支持本地账户，这里只测试了微软账户；</p><p>2.已确认输入PIN码并不能解锁；</p><p>3.手机与电脑需在同一局域网内。</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote><p>本文来自<a href="https://www.ghpym.com/ghgh06.html">果核剥壳：【果核干货应用篇-06】使用手机指纹解锁电脑</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Windows10是可以直接使用指纹解锁电脑的，但是这只是对有指纹传感器的电脑而言。&lt;/p&gt;
+&lt;p&gt;就比如我手上这台笔记本也是没有指纹传感器</summary>
+      
+    
+    
+    
+    <category term="技术教程" scheme="https://amnesia-f.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="技术教程" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>浏览器实现自动回帖功能</title>
@@ -563,35 +588,6 @@
     <category term="系统镜像" scheme="https://amnesia-f.github.io/tags/%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F/"/>
     
     <category term="Windows" scheme="https://amnesia-f.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KMS激活Windows一键脚本</title>
-    <link href="https://amnesia-f.github.io/posts/f7a.html"/>
-    <id>https://amnesia-f.github.io/posts/f7a.html</id>
-    <published>2021-01-31T03:40:28.000Z</published>
-    <updated>2021-02-12T16:23:15.112Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://img.imgdb.cn/item/601638d73ffa7d37b3356166.png" alt="封面"></p><h2 id="KMS激活Windows一键脚本"><a href="#KMS激活Windows一键脚本" class="headerlink" title="KMS激活Windows一键脚本"></a>KMS激活Windows一键脚本</h2><p>1、激活步骤：根据自身系统下载激活脚本，再右键使用管理员运行该脚本即可。</p><p>2、不知道系统版本的，使用Win+R，输入cmd并运行，然后在命令窗口输入slmgr/dlv查看版本。</p><p>3、使用KMS激活系统后，有效期为180天。</p><p>4、系统每7天会连接一次KMS服务器，获取最新的授权，然后激活有效期会重置为180天。</p><p>5、只要KMS激活服务器不挂，激活状态会一直自动续命，无需人工再次干预。</p><p>6、如果激活失败可先尝试清除后激活，<a href="https://kms.ikxin.com/kms.php?clean=1">点击下载清除脚本</a>。</p><h1 id="支持版本"><a href="#支持版本" class="headerlink" title="支持版本"></a>支持版本</h1><ul><li>Windows 10 </li><li>Windows 8.1</li><li>Windows 8</li><li>Windows Vista</li><li>Windows 7</li><li>Windows Server 2016</li><li>Windows Server 2012</li><li>Windows Server 2008</li></ul><h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p>Windows 10 Professional</p><p>Windows 10 Professional N</p><p>Windows 10 Enterprise</p><p>Windows 10 Enterprise N</p><p>Windows 10 Education</p><p>Windows 10 Education N</p><p>Windows 10 Enterprise 2015 LTSB</p><p>Windows 10 Enterprise 2015 LTSB N</p><p>Windows 10 Enterprise 2016 LTSB</p><p>Windows 10 Enterprise 2016 LTSB N</p><h3 id="Win8-1"><a href="#Win8-1" class="headerlink" title="Win8.1"></a>Win8.1</h3><p>Windows 8.1 Professional</p><p>Windows 8.1 Professional N</p><p>Windows 8.1 Enterprise</p><p>Windows 8.1 Enterprise N</p><h3 id="Win8"><a href="#Win8" class="headerlink" title="Win8"></a>Win8</h3><p>Windows 8 Professional</p><p>Windows 8 Professional N</p><p>Windows 8 Enterprise</p><p>Windows 8 Enterprise N</p><h3 id="Windows-Vista"><a href="#Windows-Vista" class="headerlink" title="Windows Vista"></a>Windows Vista</h3><p>Windows Vista Business</p><p>Windows Vista Business N</p><p>Windows Vista Enterprise</p><p>Windows Vista Enterprise N</p><h3 id="Win7"><a href="#Win7" class="headerlink" title="Win7"></a>Win7</h3><p>Windows 7 Professional</p><p>Windows 7 Professional N</p><p>Windows 7 Professional E</p><p>Windows 7 Enterprise</p><p>Windows 7 Enterprise N</p><p>Windows 7 Enterprise E</p><h3 id="Windows-Server-2016"><a href="#Windows-Server-2016" class="headerlink" title="Windows Server 2016"></a>Windows Server 2016</h3><p>Windows Server 2016 Datacenter</p><p>Windows Server 2016 Standard</p><p>Windows Server 2016 Essentials</p><h3 id="Windows-Server-2012"><a href="#Windows-Server-2012" class="headerlink" title="Windows Server 2012"></a>Windows Server 2012</h3><p>Windows Server 2012 R2 Server Standard</p><p>Windows Server 2012 R2 Datacenter</p><p>Windows Server 2012 R2 Essentials<br>Windows Server 2012</p><p>Windows Server 2012 N</p><p>Windows Server 2012 Single Language</p><p>Windows Server 2012 Country Specific</p><p>Windows Server 2012 Server Standard</p><p>Windows Server 2012 MultiPoint Standard</p><p>Windows Server 2012 MultiPoint Premium</p><p>Windows Server 2012 Datacenter</p><h3 id="Windows-Server-2008"><a href="#Windows-Server-2008" class="headerlink" title="Windows Server 2008"></a>Windows Server 2008</h3><p>Windows Server 2008 R2 Web</p><p>Windows Server 2008 R2 HPC edition</p><p>Windows Server 2008 R2 Standard</p><p>Windows Server 2008 R2 Enterprise</p><p>Windows Server 2008 R2 Datacenter</p><p>Windows Server 2008 R2 for Itanium-based Systems</p><p>Windows Web Server 2008</p><p>Windows Server 2008 Standard</p><p>Windows Server 2008 Standard without Hyper-V</p><p>Windows Server 2008 Enterprise</p><p>Windows Server 2008 Enterprise without Hyper-V</p><p>Windows Server 2008 HPC</p><p>Windows Server 2008 Datacenter</p><p>Windows Server 2008 Datacenter without Hyper-V</p><p>Windows Server 2008 for Itanium-Based Systems</p><h1 id="激活脚本下载地址"><a href="#激活脚本下载地址" class="headerlink" title="激活脚本下载地址"></a>激活脚本下载地址</h1><p><a href="https://amnesia-f.github.io/HTML/KMS/kms.html">https://amnesia-f.github.io/HTML/KMS/kms.html</a></p><h1 id="GitHub项目地址"><a href="#GitHub项目地址" class="headerlink" title="GitHub项目地址"></a>GitHub项目地址</h1><p><a href="https://github.com/ikxin/KMS-Scripts">https://github.com/ikxin/KMS-Scripts</a></p><blockquote><p>Powered by <a href="https://github.com/ikxin/KMS-WebUI">KMS-WebUI</a> | Theme by <a href="https://www.layui.com/">LayUI</a> | Author by <a href="https://www.ikxin.com/">iKxin</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img.imgdb.cn/item/601638d73ffa7d37b3356166.png&quot; alt=&quot;封面&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;KMS激活Windows一键脚本&quot;&gt;&lt;a href=&quot;#KMS激活Windows一键脚本&quot; cla</summary>
-      
-    
-    
-    
-    <category term="PC" scheme="https://amnesia-f.github.io/categories/PC/"/>
-    
-    <category term="软件激活" scheme="https://amnesia-f.github.io/categories/PC/%E8%BD%AF%E4%BB%B6%E6%BF%80%E6%B4%BB/"/>
-    
-    
-    <category term="PC" scheme="https://amnesia-f.github.io/tags/PC/"/>
-    
-    <category term="KMS" scheme="https://amnesia-f.github.io/tags/KMS/"/>
     
   </entry>
   
