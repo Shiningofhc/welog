@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-04-24T13:57:49.589Z</updated>
+  <updated>2021-04-24T14:00:34.688Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://amnesia-f.github.io/posts/73b37fcd.html"/>
     <id>https://amnesia-f.github.io/posts/73b37fcd.html</id>
     <published>2021-04-24T13:05:02.000Z</published>
-    <updated>2021-04-24T13:57:49.589Z</updated>
+    <updated>2021-04-24T14:00:34.688Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="SIoT简介"><a href="#SIoT简介" class="headerlink" title="SIoT简介"></a>SIoT简介</h2><p>​    SIoT为一个为中小学STEM教育定制的跨平台的开源MQTT服务器程序，S指科学（Science）、简单（Simple）的意思。SIoT支持Win10、Win7、Mac、Linux等操作系统，支持虚谷号、树莓派等迷你电脑，一键启动，无需注册和设置即可使用。SIoT重点关注物联网数据的收集和导出，是采集科学数据的最好选择之一。</p><p><img src="https://img.imgdb.cn/item/6084222cd1a9ae528f0167f0.png"></p><h2 id="物联网"><a href="#物联网" class="headerlink" title="物联网"></a>物联网</h2><p>​    物联网（Internet of Things，缩写IoT）是互联网的一个延伸，互联网的终端是计算机（PC、服务器），而物联网的终端是硬件设备，无论是家电、工业设备、汽车、监测仪器，所有这些终端都可以互联，可以总结为万物互联。</p><p><img src="https://img.imgdb.cn/item/6084222cd1a9ae528f016815.jpg"></p><h2 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h2><p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议）是一个基于客户端-服务器的消息发布/订阅传输协议。MQTT协议是轻量、简单、开放和易于实现的，这些特点使它适用范围非常广泛。</p><p><img src="https://img.imgdb.cn/item/6084222cd1a9ae528f0167cf.png"></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>DFRobot的论坛上已经有很多关于EasyIoT与App Inventor通讯的教程，而其他物联网平台例如OneNet和阿里云的也有不少和安卓端通讯的案例，但是我发现，论坛上没有一篇关于介绍SIoT与App Inventor通讯的教程，于是萌生了写这篇教程的想法。</p><h1 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h1><p>关于SIot的前期工作及服务器配置这里不详细展开阐述。</p><h2 id="Mind"><a href="#Mind" class="headerlink" title="Mind+"></a>Mind+</h2><p><img src="https://img.imgdb.cn/item/6084222cd1a9ae528f01679b.png"></p><h2 id="App-Inventor"><a href="#App-Inventor" class="headerlink" title="App Inventor"></a>App Inventor</h2><p><img src="https://img.imgdb.cn/item/6084222cd1a9ae528f0167b8.png"></p><p><img src="https://img.imgdb.cn/item/60842293d1a9ae528f060ca0.png"></p><p>IP地址即为你的SIot服务器ip地址（笔记本）</p><p>端口默认为1883</p><blockquote><p>注意：手机、掌控板、服务器需处在同一局域网内！</p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
     
