@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-07-08T10:44:52.432Z</updated>
+  <updated>2021-07-11T14:41:26.461Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day1：智能问答对话程序与智能灯系列</title>
+    <link href="https://amnesia-f.github.io/posts/c291af82.html"/>
+    <id>https://amnesia-f.github.io/posts/c291af82.html</id>
+    <published>2021-07-11T10:56:39.000Z</published>
+    <updated>2021-07-11T14:41:26.461Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="测试网络连接"><a href="#测试网络连接" class="headerlink" title="测试网络连接"></a>测试网络连接</h1><p>打开cmd，输入以下指令：</p><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">4</span>.<span class="number">2</span>.<span class="number">2</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure><p>以上为谷歌的DNS服务器，延迟较高，可以尝试使用以下国内的DNS服务器：</p><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">223</span>.<span class="number">5</span>.<span class="number">5</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">223</span>.<span class="number">6</span>.<span class="number">6</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure><p>当小黑窗显示内容为下图时，即证明网络连接是正常的：</p><p><img src="https://pic.imgdb.cn/item/60eae08f5132923bf8149562.jpg" alt="ping"></p><h1 id="智能问答对话程序"><a href="#智能问答对话程序" class="headerlink" title="智能问答对话程序"></a>智能问答对话程序</h1><h2 id="机器API"><a href="#机器API" class="headerlink" title="机器API"></a>机器API</h2><p>智能机器人API： <a href="https://www.sojson.com/api/semantic.html">https://www.sojson.com/api/semantic.html</a></p><p>接口地址：<code>http://api.qingyunke.com/api.php?key=free&amp;appid=0&amp;msg=关键词</code></p><p>　　　　　<code>key</code>　固定参数free</p><p>　　　　　<code>appid</code> 设置为0，表示智能识别，可忽略此参数</p><p>　　　　　<code>msg</code>　关键词，请参考下方参数示例，该参数可智能识别，该值请经过 urlencode 处理后再提交</p><p>返回结果：<code>&#123;&quot;result&quot;:0,&quot;content&quot;:&quot;内容&quot;&#125;</code></p><p>　　　　　<code>result</code>　状态，0表示正常，其它数字表示错误</p><p>　　　　　<code>content</code>　信息内容</p><h2 id="API-Demo"><a href="#API-Demo" class="headerlink" title="API Demo"></a>API Demo</h2><ul><li><p>当我们访问url为：<code>http://api.qingyunke.com/api.php?key=free&amp;appid=0&amp;msg=鹅鹅鹅</code></p><p>此时返回值为：</p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">&quot;result&quot;</span>:<span class="number">0</span>,<span class="attr">&quot;content&quot;</span>:<span class="string">&quot;曲项向天歌&quot;</span>&#125;</span><br></pre></td></tr></table></figure></li></ul><ul><li><p>当我们访问url为：<code>http://api.qingyunke.com/api.php?key=free&amp;appid=0&amp;msg=你好</code></p><p>此时返回值为：</p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">&quot;result&quot;</span>:<span class="number">0</span>,<span class="attr">&quot;content&quot;</span>:<span class="string">&quot;你好，我就开心了&quot;</span>&#125;</span><br></pre></td></tr></table></figure></li></ul><p>我们可以发现，返回值的前面23个字符都是相同的，所以我们需要的内容是第24个字符开始到倒数第3个字符</p><p><img src="https://pic.imgdb.cn/item/60eae47f5132923bf823d933.jpg" alt="请求"></p><h2 id="整体代码"><a href="#整体代码" class="headerlink" title="整体代码"></a>整体代码</h2><p><img src="https://pic.imgdb.cn/item/60eaf25c5132923bf862a05b.png" alt="screenshots-智能问答对话程序"></p><h1 id="智能灯系列"><a href="#智能灯系列" class="headerlink" title="智能灯系列"></a>智能灯系列</h1><p>一共有四个模式：</p><ol><li>光控模式</li><li>声控模式</li><li>呼吸模式</li><li>档位模式</li></ol><p><img src="https://pic.imgdb.cn/item/60eaff575132923bf8b00b8d.png" alt="screenshots-智能灯系列"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;测试网络连接&quot;&gt;&lt;a href=&quot;#测试网络连接&quot; class=&quot;headerlink&quot; title=&quot;测试网络连接&quot;&gt;&lt;/a&gt;测试网络连接&lt;/h1&gt;&lt;p&gt;打开cmd，输入以下指令：&lt;/p&gt;
+&lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里云IoT：读取掌控板环境数值</title>
@@ -526,36 +551,6 @@
     <category term="PC" scheme="https://amnesia-f.github.io/tags/PC/"/>
     
     <category term="Adobe" scheme="https://amnesia-f.github.io/tags/Adobe/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SIoT：连接AppInventor和Mind+</title>
-    <link href="https://amnesia-f.github.io/posts/bc3531cf.html"/>
-    <id>https://amnesia-f.github.io/posts/bc3531cf.html</id>
-    <published>2021-02-12T15:31:15.000Z</published>
-    <updated>2021-02-12T15:56:51.543Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>文：廖启文</p></blockquote><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>首先，下载</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cba.png"></p><p>并将其解压，解压之后会得到一个文件夹。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8ca6.png"></p><p> 点击文件夹找到名为SIoT_windows_1_2的文件并打开，就会得到一个小黑窗。</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cad.png"></p><p>  第二步，在键盘上点击“开始”键+R键，当屏幕左下角出现弹窗的时候点击“回车”键会出现一个小黑窗。随后在小黑窗里输入“ipconfig”之后点击回车键以便得到自己电脑的IP地址。（注意：一定要在电脑连上网时操作！）</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8caa.png"></p><p>之后在浏览器的网站栏上输入：192.168.100.2：8080（注意：192.168.100.2不是你电脑的IP地址，自己的IP地址要自己找！）将末尾的8080改成8888可以使用离线版的本地APPinventor，但是要提前打开文件：</p><p><img src="https://img.imgdb.cn/item/6026a1853ffa7d37b3ce8cb4.png"></p><p>之后等待第一个黑窗说出Server running即可。</p><p>输入：192.168.100.2:8080之后就可以得到SIOT的网页，用户名：siot 密码：dfrobot</p><p>  第三步，将Mind+里的物联网模块设置为：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66e.png"></p><p>wifi是自己的wifi，Iot-pwd输入的是siot网页上的密码，也就是dfrobot。Topic输入的是siot里的项目ID和名称。输入的格式为：项目ID/名称。之后Mind+就可以连接到电脑端了。</p><p>  第四步，连接APPinventor。连接之前先要在APPinventor里导入MqttTCP1，代码是这样的：</p><p><img src="https://img.imgdb.cn/item/6026a1f13ffa7d37b3ceb66b.png"></p><p>接收的topic要用一个单独的topic。</p><p>  最后就是手机端的操作：</p><p><img src="https://img.imgdb.cn/item/6026a1f03ffa7d37b3ceb669.png"></p><p>IP地址就是你自己电脑的IP地址，用户名称和密码其实就是你本地的SIOT网站上的名称和密码。topic其实就是SIOT端的topic。（连接成功之后不要关闭电脑端的运行工作，否则可能会导致连接失败！）</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;文：廖启文&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;p&gt;首先，下载&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https:/</summary>
-      
-    
-    
-    
-    <category term="IoT物联网" scheme="https://amnesia-f.github.io/categories/IoT%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-    <category term="物联网" scheme="https://amnesia-f.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    <category term="SIoT" scheme="https://amnesia-f.github.io/tags/SIoT/"/>
     
   </entry>
   
