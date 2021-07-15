@@ -6,7 +6,7 @@
   <link href="https://amnesia-f.github.io/atom.xml" rel="self"/>
   
   <link href="https://amnesia-f.github.io/"/>
-  <updated>2021-07-13T03:11:28.875Z</updated>
+  <updated>2021-07-15T14:20:21.309Z</updated>
   <id>https://amnesia-f.github.io/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Day5：蓝牙5.0模块与AppInventor通讯</title>
+    <link href="https://amnesia-f.github.io/posts/e46d226a.html"/>
+    <id>https://amnesia-f.github.io/posts/e46d226a.html</id>
+    <published>2021-07-15T14:13:16.000Z</published>
+    <updated>2021-07-15T14:20:21.309Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="蓝牙5-0模块与AppInventor通讯"><a href="#蓝牙5-0模块与AppInventor通讯" class="headerlink" title="蓝牙5.0模块与AppInventor通讯"></a>蓝牙5.0模块与AppInventor通讯</h1><h2 id="蓝牙配对过程"><a href="#蓝牙配对过程" class="headerlink" title="蓝牙配对过程"></a>蓝牙配对过程</h2><p>配对过程详见昨天的教程：<a href="https://blog.csdn.net/weixin_58068682/article/details/118739763#t7">Day4：蓝牙4.0与5.0模块的使用</a></p><h2 id="掌控接收代码"><a href="#掌控接收代码" class="headerlink" title="掌控接收代码"></a>掌控接收代码</h2><p>没什么好说的，就是简单的串口接收程序：</p><p>如果手机端发送<code>a</code>，在掌控板端即收到a的ASCII码97，这时开灯；<br>如果手机端发送<code>b</code>，在掌控板端即收到b的ASCII码98，这时关灯。<br><img src="https://img-blog.csdnimg.cn/2021071516164613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="接收代码"></p><h2 id="App发送程序"><a href="#App发送程序" class="headerlink" title="App发送程序"></a>App发送程序</h2><p>首先打开<a href="https://wwe.lanzoui.com/iEC8Yrf80yj">蓝牙调试器</a>App，查看蓝牙模式的UUID：<br><img src="https://img-blog.csdnimg.cn/20210715162216555.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="UUID"><br>我们可以获取到以下两个UUID：<br><code>0000fff0-0000-1000-8000-00805f9b34fb</code><br><code>0000fff2-0000-1000-8000-00805f9b34fb</code>（上面软件显示的第二个UUID是错误的）</p><p>接着我们去到App Inventor的开发平台 <a href="https://app.wxbit.com/">https://app.wxbit.com/</a></p><p>新建一个项目，然后在左边组件面板点击通信连接，然后将<code>BluetoothLE</code>这个组件拖到中间的手机屏幕中，添加这个组件<br><img src="https://img-blog.csdnimg.cn/20210715162654887.png#pic_center" alt="le"><br>接着我们去到编程界面，将上面找到的UUID相对应填入其中：</p><p><em>服务UUID</em>对应的是软件中的<em>透传服务UUID</em><br><em>特征UUID</em>对应的是软件中的<em>透传TX特征的UUID</em><br><img src="https://img-blog.csdnimg.cn/20210715163001199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>其他部分大同小异，这里不作阐述，只放出完整代码作参考：</p><h2 id="App完整代码"><a href="#App完整代码" class="headerlink" title="App完整代码"></a>App完整代码</h2><p><img src="https://img-blog.csdnimg.cn/20210715163844422.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210715164034280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h1 id="随堂笔记"><a href="#随堂笔记" class="headerlink" title="随堂笔记"></a>随堂笔记</h1><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p><code>Shift+Enter</code> 换行 新起一行但不分段<br><code>Enter</code>      回车 新起一行但分段</p><h2 id="运行命令"><a href="#运行命令" class="headerlink" title="运行命令"></a>运行命令</h2><p><code>calc</code> 计算器</p><p><code>osk</code> 虚拟键盘</p><p><code>notepad</code> 记事本</p><p><code>cmd</code> 命令提示符</p><p><code>winword</code> 打开Word</p><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>字符串输出：纯输出字符<br>原始输出：ASCII的十进制值<br>十六进制输出：ASCII的十六进制值</p><h2 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h2><p><img src="https://img-blog.csdnimg.cn/20210715160626971.png#pic_center" alt="进制转换"></p><h2 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h2><p>UTF-8 </p><p>GB2312 国标简体</p><p>GB18030  </p><p>GBK 简体</p><p>Big5 繁体</p><h2 id="英文名词"><a href="#英文名词" class="headerlink" title="英文名词"></a>英文名词</h2><p>Master 主模式</p><p>Slave 从模式</p><p>Portable 便携版</p><p>Beta 测试版</p><p>Realease 正式版</p><p>RC 候选版 </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;蓝牙5-0模块与AppInventor通讯&quot;&gt;&lt;a href=&quot;#蓝牙5-0模块与AppInventor通讯&quot; class=&quot;headerlink&quot; title=&quot;蓝牙5.0模块与AppInventor通讯&quot;&gt;&lt;/a&gt;蓝牙5.0模块与AppInventor通讯&lt;/</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day4：蓝牙4.0与5.0模块的使用</title>
+    <link href="https://amnesia-f.github.io/posts/77049f2e.html"/>
+    <id>https://amnesia-f.github.io/posts/77049f2e.html</id>
+    <published>2021-07-15T14:11:20.000Z</published>
+    <updated>2021-07-15T14:17:38.902Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="蓝牙4-0无线通讯模块"><a href="#蓝牙4-0无线通讯模块" class="headerlink" title="蓝牙4.0无线通讯模块"></a>蓝牙4.0无线通讯模块</h1><h2 id="配对过程"><a href="#配对过程" class="headerlink" title="配对过程"></a>配对过程</h2><p>1、使用arduino.exe、Mind+或sscom等串口通讯软件打开蓝牙串口，配置成波特率115200，<strong>不要输出结束符</strong>，然后发送<code>+++</code>进入AT模式。<br><img src="https://img-blog.csdnimg.cn/2021071423233651.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p><p>2、<code>AT+VERSION=?</code> 可以查询下固件版本（非必须步骤）<br><strong>一定要确认下方的结束符发送部分改成了发送“NL和CR”</strong>（即自动在命令后加上换行和回车一起发送过去），以下的AT命令部分也都需要确认这个设置。<br>Arduino界面：<br><img src="https://img-blog.csdnimg.cn/20210714232719368.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>Mind+界面：<br><img src="https://img-blog.csdnimg.cn/20210714232719377.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>3、<code>AT+ROLE=?</code> 查询当前BLE芯片的主从机状态（默认值为ROLE_PERIPHERAL，从机角色）。需要将两块蓝牙修改为一主一从才能互相收发。主模式是ROLE_CENTRAL<br><img src="https://img-blog.csdnimg.cn/20210714233019811.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="3"><br>4、使用<code>AT+ROLE=ROLE_CENTRAL</code> 将一块蓝牙模块设置工作在主机状态下（另一块设置为从机角色）<br><img src="https://img-blog.csdnimg.cn/20210714233219408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="4"><br>5、再次使用<code>AT+ROLE=?</code>确认修改主机角色成功。<br><img src="https://img-blog.csdnimg.cn/2021071423325381.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="5"><br>6、使用<code>AT+NAME=xxxxxx</code> 修改蓝牙设备名字。</p><p><img src="https://img-blog.csdnimg.cn/20210714233338817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h2 id="推荐快速设定方法"><a href="#推荐快速设定方法" class="headerlink" title="推荐快速设定方法"></a>推荐快速设定方法</h2><h3 id="从机设定："><a href="#从机设定：" class="headerlink" title="从机设定："></a>从机设定：</h3><p><code>AT+SETTING=DEFPERIPHERAL</code> 恢复成从机模式的初始设定<br><code>AT+NAME=xxxxxx</code> 改成你自定义的名字<br><code>AT+MAC=?</code> 查询当前BLE芯片MAC地址 //假设查询到的MAC地址为0x0017ea9397e1<br><code>AT+RESTART</code> 重启BLE芯片</p><h3 id="主机设定："><a href="#主机设定：" class="headerlink" title="主机设定："></a>主机设定：</h3><p><code>AT+SETTING=DEFCENTRAL</code> 恢复成主机模式的初始设定<br><code>AT+CMODE=UNIQUE</code> 设置连接模式为指定蓝牙地址连接模式<br><code>AT+BIND=0x0017ea9397e1</code> 设置BLE芯片绑定的蓝牙地址为0x0017ea9397e1（需与从机<br>模块地址一致）<br><code>AT+RESTART</code> 重启BLE芯片</p><h2 id="引脚说明"><a href="#引脚说明" class="headerlink" title="引脚说明"></a>引脚说明</h2><p><img src="https://img-blog.csdnimg.cn/2021071423364499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>TX与RX需反接，且需要小头的杜邦线：<img src="https://img-blog.csdnimg.cn/20210714234551490.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h2 id="相关网页教程"><a href="#相关网页教程" class="headerlink" title="相关网页教程"></a>相关网页教程</h2><p>[教程]使用图形化编程实现主控板与手机蓝牙App Inventor通讯<br><a href="https://mc.dfrobot.com.cn/thread-275794-1-1.html">https://mc.dfrobot.com.cn/thread-275794-1-1.html</a><br>[教程]Arduino+App Inventor+mixly=纯图形化编程自制APP玩转bluno蓝牙4.0(BLE)<br><a href="https://mc.dfrobot.com.cn/thread-35738-1-1.html">https://mc.dfrobot.com.cn/thread-35738-1-1.html</a><br>Wiki：<br><a href="https://wiki.dfrobot.com.cn/_SKU_TEL0073_BLE-Link_%E8%93%9D%E7%89%994.0%E6%97%A0%E7%BA%BF%E9%80%9A%E8%AE%AF%E6%A8%A1%E5%9D%97">https://wiki.dfrobot.com.cn/_SKU_TEL0073_BLE-Link_蓝牙4.0无线通讯模块</a></p><h1 id="蓝牙5-0模块"><a href="#蓝牙5-0模块" class="headerlink" title="蓝牙5.0模块"></a>蓝牙5.0模块</h1><h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><p>一、连接设备，打开串口，设置好<strong>波特率115200</strong>，注意请选择<strong>没有结束符</strong>，以上设置好后发送<code>AT</code>，串口会返回OK：<img src="https://img-blog.csdnimg.cn/20210714235922225.png#pic_center" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20210714235922547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>二、发送 <code>AT+ROLE?</code> 串口会返回OK+num,其中num如果等于0，代表当前处于从机模式；num如果等于1，代表当前处于主机模式；num如果等于3，代表当前处于主从一体模式<br><img src="https://img-blog.csdnimg.cn/20210714235953532.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>三、设置从机模式发送 <code>AT+ROLE=0</code> ,返回OK<br><img src="https://img-blog.csdnimg.cn/20210715000009674.png#pic_center" alt="在这里插入图片描述"></p><p>四、使能普通广播模式发送 <code>AT+ADV=1</code> ,返回OK<br><img src="https://img-blog.csdnimg.cn/20210715000222427.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>五、设置广播名称，即设置蓝牙名称，以小明为例，发送<code>AT+NAME=小明</code> ，返回OK<br><img src="https://img-blog.csdnimg.cn/20210715000308903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><p>六、用手机的蓝牙调试助手，就可以搜索到我们的蓝牙<br><img src="https://img-blog.csdnimg.cn/20210715000317780.png#pic_center" alt="在这里插入图片描述"></p><h2 id="引脚说明-1"><a href="#引脚说明-1" class="headerlink" title="引脚说明"></a>引脚说明</h2><p><img src="https://img-blog.csdnimg.cn/20210715001926245.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h2 id="指令说明"><a href="#指令说明" class="headerlink" title="指令说明"></a>指令说明</h2><p>以下为全部的AT指令，详细说明见<a href="https://www.aliyundrive.com/s/dZ68vUfPM2u">分享链接</a>中的<code>蓝牙5.0命令资料.pdf</code><br><img src="https://img-blog.csdnimg.cn/20210715002447531.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mg==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p>阿里云盘分享：<a href="https://www.aliyundrive.com/s/dZ68vUfPM2u">https://www.aliyundrive.com/s/dZ68vUfPM2u</a></p><p>蓝牙调试App：<br><a href="https://wwe.lanzoui.com/iEC8Yrf80yj">https://wwe.lanzoui.com/iEC8Yrf80yj</a></p><h1 id="随堂笔记"><a href="#随堂笔记" class="headerlink" title="随堂笔记"></a>随堂笔记</h1><p>通讯方式有以下几种：</p><h2 id="远距离"><a href="#远距离" class="headerlink" title="远距离"></a>远距离</h2><p><a href="https://www.baidu.com/link?url=tMJV9aruV60_1i5gfmUrdSC8qDASp5nUwSFL2MZatSi32xr71s9LD9jMRuuvba6nMaiECboAh0ub_rcjrgfozqApmW-5ljznCwRfFnqGCfO&wd=&eqid=ba754d11001f02d40000000360ef13b0">NB-IoT</a>、2/3/4/<a href="https://www.baidu.com/link?url=7ciqzObH3dEeUiAFMyxjlZg9Q6qtPuEmriDm6IO_mUojyyp8EXmTNO5g3a9HkN5KpDQJ6m-nB6OffZK8QrKrm_&wd=&eqid=828138dd001f866b0000000360ef13ca">5G</a>、<a href="https://baike.baidu.com/item/gprs/107439?fr=aladdin">GPRS</a></p><h2 id="中距离"><a href="#中距离" class="headerlink" title="中距离"></a>中距离</h2><p>LoRa</p><h2 id="近距离"><a href="#近距离" class="headerlink" title="近距离"></a>近距离</h2><p>WiFi 2.4GHz/5GHz</p><h2 id="ZigBee"><a href="#ZigBee" class="headerlink" title="ZigBee"></a>ZigBee</h2><p>特点：<br>1、低功耗      </p><p>2、低成本</p><p>3、可靠</p><p>4、网络容量大      </p><p>5、安全保密</p><p>6、工作频段灵活</p><p><del>7、传输范围小</del> </p><p><del>8、数据传输速率低</del>  </p><p><del>9、时延不易确定</del> </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;蓝牙4-0无线通讯模块&quot;&gt;&lt;a href=&quot;#蓝牙4-0无线通讯模块&quot; class=&quot;headerlink&quot; title=&quot;蓝牙4.0无线通讯模块&quot;&gt;&lt;/a&gt;蓝牙4.0无线通讯模块&lt;/h1&gt;&lt;h2 id=&quot;配对过程&quot;&gt;&lt;a href=&quot;#配对过程&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day3：控制MP3模块</title>
+    <link href="https://amnesia-f.github.io/posts/817b8e0e.html"/>
+    <id>https://amnesia-f.github.io/posts/817b8e0e.html</id>
+    <published>2021-07-14T12:33:44.000Z</published>
+    <updated>2021-07-14T15:05:33.816Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="手势音乐盒"><a href="#手势音乐盒" class="headerlink" title="手势音乐盒"></a>手势音乐盒</h1><h2 id="按钮控制模式"><a href="#按钮控制模式" class="headerlink" title="按钮控制模式"></a>按钮控制模式</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/5eb92d767e7f7b9452ff1c35d5ec4fdb.png#pic_center" alt="在这里插入图片描述"></p><h2 id="手势控制模式"><a href="#手势控制模式" class="headerlink" title="手势控制模式"></a>手势控制模式</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/293c6a8e5c203dca9dd77a69b53a88d3.png#pic_center" alt="在这里插入图片描述"></p><h2 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/50824b1e434b3aefd7d5b72b7c721b54.png#pic_center" alt="在这里插入图片描述"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;手势音乐盒&quot;&gt;&lt;a href=&quot;#手势音乐盒&quot; class=&quot;headerlink&quot; title=&quot;手势音乐盒&quot;&gt;&lt;/a&gt;手势音乐盒&lt;/h1&gt;&lt;h2 id=&quot;按钮控制模式&quot;&gt;&lt;a href=&quot;#按钮控制模式&quot; class=&quot;headerlink&quot; title=&quot;按</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="学习笔记" scheme="https://amnesia-f.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Day2：党史问答系统</title>
@@ -470,82 +542,6 @@
     <category term="技术教程" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     <category term="右键菜单" scheme="https://amnesia-f.github.io/tags/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>论如何让百度网盘里的视频倍速播放</title>
-    <link href="https://amnesia-f.github.io/posts/4161854e.html"/>
-    <id>https://amnesia-f.github.io/posts/4161854e.html</id>
-    <published>2021-02-15T15:59:59.000Z</published>
-    <updated>2021-02-15T14:04:39.305Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近在一直在看很多教程资料视频和纪录片，奈何有些老师和纪录片的内容太长，于是想着倍速播放能提高效率，但是在百度网盘上需要SVIP才能实现这个功能。</p><p>秉着这辈子都不可能充钱的原则，今天就来讲讲如何让百度网盘里的视频倍速播放。</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><blockquote><p>如果你认为以下教程过于繁杂，请直接拉到文末结语处。</p></blockquote><h2 id="PC-Windows端方法"><a href="#PC-Windows端方法" class="headerlink" title="PC || Windows端方法"></a>PC || Windows端方法</h2><h3 id="谷歌浏览器"><a href="#谷歌浏览器" class="headerlink" title="谷歌浏览器"></a>谷歌浏览器</h3><p>打开需要播放的视频网页，点击<code>F12</code>进入开发者工具，点击上方的<code>Console</code>，然后在下方输入以下代码：</p><p><img src="https://upimage.alexhchu.com/2021/02/14/692dcba005741.png" alt="开发者工具.png"></p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">videojs.getPlayers(&quot;video-player&quot;).html5player.tech_.setPlaybackRate(2)</span><br></pre></td></tr></table></figure><p>上面的代码实现的是二倍速播放视频，如果想实现其他倍速播放在最后的括号中输入你想要的倍速即可。</p><h3 id="火狐浏览器"><a href="#火狐浏览器" class="headerlink" title="火狐浏览器"></a>火狐浏览器</h3><p>打开需要播放的视频，右键点击视频播放处，选择<code>播放速度→倍速</code>即可：</p><p><img src="https://pic3.zhimg.com/v2-79c3dbeea8edde77d6d808ad471265be_r.jpg" alt="火狐浏览器视频处"></p><p><img src="https://pic1.zhimg.com/v2-9234c99f55eba24180320969b00c5024_b.webp" alt="火狐浏览器倍速播放"></p><p>如果发现右键没有播放速度，请点右上角那个三（设置）→附加组件→插件→Shockwave Flash→永不激活即可。</p><h3 id="Edge浏览器"><a href="#Edge浏览器" class="headerlink" title="Edge浏览器"></a>Edge浏览器</h3><p>打开win10自带的Edge浏览器，进入 <a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd</a> 安装油猴插件：</p><p><img src="https://upimage.alexhchu.com/2021/02/14/463e1dedf68a5.png" alt="安装油猴.png"></p><p>安装倍速脚本： <a href="https://greasyfork.org/zh-CN/scripts/411523-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E5%9C%A8%E7%BA%BF%E5%80%8D%E6%95%B0%E6%92%AD%E6%94%BE-%E5%85%A8%E7%BD%91%E6%9C%80%E5%BC%BA-%E5%B7%B2%E5%81%9A%E7%BE%A4%E7%BB%84%E8%A7%86%E9%A2%91%E9%80%82%E9%85%8D-%E4%B8%8D%E7%94%A8%E4%BF%9D%E5%AD%98%E6%96%87%E4%BB%B6%E4%B9%9F%E5%8F%AF%E5%80%8D%E9%80%9F-%E6%97%A0vip%E9%99%90%E5%88%B6">链接过长，使用跳转链接</a></p><p><img src="https://upimage.alexhchu.com/2021/02/14/eb3ed76806cab.png" alt="安装插件.png"></p><p>登录你的网盘，播放视频的页面左侧会有倍速选项，点击选择即可。</p><p><img src="https://upimage.alexhchu.com/2021/02/14/a09820790a9a9.png" alt="使用插件.png"></p><blockquote><p>好像直接在视频处右键也可以实现倍速播放，不过这里没有测试，如果你有兴趣可以试一试是否可行。</p></blockquote><h3 id="Potplayer播放器"><a href="#Potplayer播放器" class="headerlink" title="Potplayer播放器"></a>Potplayer播放器</h3><p>将你需要进行倍速播放的视频下载到本地后，使用Potplayer播放器打开视频，选择倍速播放即可，值得一提的是Potplayer播放器对视频倍速播放功能可加可减，以0.1为倍速增加或者减少：</p><p><img src="https://pic1.zhimg.com/v2-82fcb9a31bf83fbd18e288597212d1e2_r.jpg?source=1940ef5c" alt="Potplayer播放器"></p><h3 id="爱奇艺万能播放器"><a href="#爱奇艺万能播放器" class="headerlink" title="爱奇艺万能播放器"></a>爱奇艺万能播放器</h3><p>选择在线播放，打开视频，点击左键播放，自己调节速度或者在线倍速播放.</p><p><img src="https://upimage.alexhchu.com/2021/02/14/d77e51d2933d1.png" alt="爱奇艺万能联播.png"></p><h2 id="PC-Mac端方法"><a href="#PC-Mac端方法" class="headerlink" title="PC || Mac端方法"></a>PC || Mac端方法</h2><h3 id="火狐浏览器-1"><a href="#火狐浏览器-1" class="headerlink" title="火狐浏览器"></a>火狐浏览器</h3><p>与Windows端方法相同：</p><p><img src="https://upimage.alexhchu.com/2021/02/14/aabc76b09d2a7.png" alt="Mac火狐.png"></p><h2 id="手机-Android端方法"><a href="#手机-Android端方法" class="headerlink" title="手机 || Android端方法"></a>手机 || Android端方法</h2><h3 id="ES文件浏览器配合MXplayer"><a href="#ES文件浏览器配合MXplayer" class="headerlink" title="ES文件浏览器配合MXplayer"></a>ES文件浏览器配合MXplayer</h3><p>点击左上角三条杠——网络——网盘</p><p><img src="https://pic2.zhimg.com/v2-0a23f0e9828080dbed9e1a39b9322a51_r.jpg?source=1940ef5c" alt="进入网盘"></p><p>点击右上角“新建”——选择百度网盘——登录</p><p><img src="https://pic1.zhimg.com/v2-f79a84a62de26e18321df65b1392bcd3_r.jpg?source=1940ef5c" alt="登录网盘"></p><p>点击新建好的百度网盘——进入选择要播放的视频——选择MXplayer播放器</p><p><img src="https://pic4.zhimg.com/v2-ff9956ad5ec53c96cffa55d17bdb3221_r.jpg?source=1940ef5c" alt="MX播放器"></p><p>进入视频播放页面——点击右上角的解码设置——选择软件解码器</p><p><img src="https://pic1.zhimg.com/80/v2-fdf07ebc6a29e0d16c8ee85857948915_720w.jpg?source=1940ef5c" alt="MX解码"></p><p>点击右上角三个点的设置图标——播放——速度——然后就可以实现倍速播放了。</p><p><img src="https://pic4.zhimg.com/v2-f0d9bdd2818a9fd1d737477690dfa218_r.jpg?source=1940ef5c" alt="倍速播放"></p><h3 id="Alook浏览器"><a href="#Alook浏览器" class="headerlink" title="Alook浏览器"></a>Alook浏览器</h3><p>Alook浏览器一直以来都是苹果手机的专属，可是现在安卓端也有这个软件了。alook浏览器专属的倍速播放功能刚好完美的解决了我们的问题。</p><p>我们使用alook浏览器登录百度网盘，直接播放视频，可以在上方看到有倍速播放功能，<strong>最低0.5倍速，最高4.0倍速</strong>。</p><p><img src="https://upimage.alexhchu.com/2021/02/14/90efb0df816fd.png" alt="Alook浏览器.png"></p><h3 id="百度网盘App"><a href="#百度网盘App" class="headerlink" title="百度网盘App"></a>百度网盘App</h3><p>不需要使用其他倍速软件，将视频下载好，然后就可以在百度网盘上直接倍速观看即可：</p><p><img src="https://upimage.alexhchu.com/2021/02/14/8f58463a624bf.png" alt="百度App1.png"></p><p><img src="https://upimage.alexhchu.com/2021/02/14/7ab05f2e60ed3.png" alt="百度App2.png"></p><p><img src="https://upimage.alexhchu.com/2021/02/14/cca521d896b97.png" alt="百度App3.png"></p><h3 id="小米手机自带视频播放软件"><a href="#小米手机自带视频播放软件" class="headerlink" title="小米手机自带视频播放软件"></a>小米手机自带视频播放软件</h3><p>1.将网盘的视频下载到本地；</p><p>2.进入系统自带软件文件管理，找到你下载视频所在的文件；</p><p>3.选择你要看的视频，打开，右下角直接调倍速即可。</p><h2 id="手机-iOS端方法"><a href="#手机-iOS端方法" class="headerlink" title="手机 || iOS端方法"></a>手机 || iOS端方法</h2><h3 id="ES文件浏览器"><a href="#ES文件浏览器" class="headerlink" title="ES文件浏览器"></a>ES文件浏览器</h3><p>与Android端操作相同，且不需另外安装播放器，直接在ES文件浏览器中播放即可！</p><h3 id="Alook浏览器-1"><a href="#Alook浏览器-1" class="headerlink" title="Alook浏览器"></a>Alook浏览器</h3><p>Alook浏览器在苹果商店需要钱购买，不过可以在淘宝买一个。然后直接登录百度云盘，就有倍速播放的功能，永久使用。</p><h3 id="1K播放器"><a href="#1K播放器" class="headerlink" title="1K播放器"></a>1K播放器</h3><p>1、下载1k播放器（或许可以给点广告费我？）</p><p>2、在百度网盘中下载视频，下载选项一定要选【原画】</p><p>3、播放视频，然后操作如下（2步），转存、拷贝至播放器（如图）：</p><p><img src="https://pic4.zhimg.com/v2-5ca514cb18a3d54031dcdf756371ec8a_r.jpg?source=1940ef5c" alt="拷贝视频"></p><p><img src="https://pic2.zhimg.com/v2-5d4a05f1619a7d3e04085627368c0f88_r.jpg?source=1940ef5c" alt="打开视频"></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>如果觉得以上教程繁杂，推荐使用钞能力：<a href="https://pan.baidu.com/buy/checkoutcounter?from=card&amp;svip=1">https://pan.baidu.com/buy/checkoutcounter?from=card&amp;svip=1</a></p><p>百度网盘SVIP一年263元。</p><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;最近在一直在看很多教程资料视频和纪录片，奈何有些老师和纪录片的内容太长，于是想着倍速播放能提高效率，但是在百度网盘上需要SVIP才能实现这个</summary>
-      
-    
-    
-    
-    <category term="技术教程" scheme="https://amnesia-f.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="技术教程" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="百度网盘" scheme="https://amnesia-f.github.io/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>掌控板在上传模式下无法连接MQTT的解决方法</title>
-    <link href="https://amnesia-f.github.io/posts/461b0433.html"/>
-    <id>https://amnesia-f.github.io/posts/461b0433.html</id>
-    <published>2021-02-15T15:31:15.000Z</published>
-    <updated>2021-05-30T08:36:21.453Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>SIoT是一种本地的物联网服务器，无需联网也能使用，但它却不如EasyIoT方便，这不前几天遇到了一个问题：掌控板死活连接不上SIoT。</p><p>所以今天就来讲讲掌控板在上传模式下无法连接MQTT的解决方法。</p><p>本方法适合Win10系统电脑，其他系统请自行寻找差异并自行解决。</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="寻找问题"><a href="#寻找问题" class="headerlink" title="寻找问题"></a>寻找问题</h2><h3 id="启动SIoT服务器"><a href="#启动SIoT服务器" class="headerlink" title="启动SIoT服务器"></a>启动SIoT服务器</h3><p>双击启动SIoT网络服务器：</p><p><img src="https://img.imgdb.cn/item/6027f5d3d2a061fec7827340.png" alt="启动siot服务器"></p><p>双击后显示以下内容：</p><p><img src="https://img.imgdb.cn/item/6027f5d3d2a061fec7827331.png" alt="siot服务器显示内容"></p><h3 id="查询ip地址"><a href="#查询ip地址" class="headerlink" title="查询ip地址"></a>查询ip地址</h3><p>Win+r打开运行窗口，并输入cmd后按回车键。</p><p>输入<code>ipconfig</code>查看本机ip地址：</p><p><img src="https://img.imgdb.cn/item/6027f5d3d2a061fec7827328.png" alt="ip地址"></p><h3 id="测试连接状态"><a href="#测试连接状态" class="headerlink" title="测试连接状态"></a>测试连接状态</h3><p>打开Mind+软件，切换模式为“<code>上传模式</code>”，主板选择掌控板，在网络服务中选择“<code>MQTT</code>”和“<code>WIFI</code>”，之后输入以下测试代码(文末处提供源代码)，并对应设置好“MQTT初始化参数”，服务器地址处填你的电脑ip地址：</p><p><img src="https://img.imgdb.cn/item/6027f5d3d2a061fec7827347.png" alt="添加扩展"></p><p><img src="https://img.imgdb.cn/item/6027f5d3d2a061fec7827336.png" alt="测试连接代码"></p><p><img src="https://img.imgdb.cn/item/60287c37d2a061fec7ab5597.png" alt="初始化MQTT参数"></p><h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p>将掌控板连接到电脑，上传程序，上传成功后，我们可以看到掌控板的程序只进行到“发起连接”便停止了，如下图：</p><p><img src="https://img.imgdb.cn/item/6028831ad2a061fec7ad642c.jpg" alt="掌控板连接状态"></p><h3 id="更换模式再次进行尝试"><a href="#更换模式再次进行尝试" class="headerlink" title="更换模式再次进行尝试"></a>更换模式再次进行尝试</h3><p>在Mind+软件右上角将模式切换为“实时模式”，右下角扩展中主板选择掌控板，在网络服务中选择<code>MQTT</code>，点击连接设备，烧录好固件后进行以下测试程序(文末处提供源代码)：</p><p><img src="https://img.imgdb.cn/item/6028831ad2a061fec7ad6423.png" alt="实时模式测试代码"></p><p><img src="https://img.imgdb.cn/item/60287c37d2a061fec7ab5597.png" alt="初始化物联网参数"></p><p>点击点击绿旗启动程序后，可以看到掌控板，最后显示内容为<code>MQTT连接连接成功</code>，并通过访问192.168.88.100:8080，可以查看到如下内容：</p><p><img src="https://img.imgdb.cn/item/6028831ad2a061fec7ad6412.png" alt="siot平台"></p><p>证明网络服务器是能接收到数据的。</p><h3 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h3><p>这时使用其他电脑ping此电脑的ip时，会显示以下内容：</p><p><img src="https://img.imgdb.cn/item/6028831ad2a061fec7ad640c.png" alt="ping"></p><p>访问端口号进行验证也是无法进入的，如下图所示：</p><p><img src="https://img.imgdb.cn/item/602886f8d2a061fec7aea4b7.png" alt="访问网址"></p><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="将siot加入白名单"><a href="#将siot加入白名单" class="headerlink" title="将siot加入白名单"></a>将siot加入白名单</h3><p>Win+r打开运行窗口，输入<code>control</code>后按回车键，</p><p>进入控制面板后，依次打开：<code>控制面板\系统和安全\Windows Defender 防火墙</code>，</p><p>然后点击左边的<code>允许应用或功能通过WIndows Defender 防火墙</code>，进入下面界面，点击“更改设置”，之后点击“允许其他应用”。</p><p><img src="https://img.imgdb.cn/item/602886f8d2a061fec7aea4cf.png" alt="允许应用"></p><p>找到MQTT网络服务器本地电脑所在位置，选择后点击打开，然后点击右下方“添加”即可：</p><p><img src="https://img.imgdb.cn/item/602886f8d2a061fec7aea4bb.png" alt="浏览应用"></p><p><img src="https://img.imgdb.cn/item/602886f8d2a061fec7aea4c0.png" alt="添加应用"></p><p>最后我们就可以看到Siot服务器已经在防火墙白名单中了：</p><p><img src="https://img.imgdb.cn/item/602886f8d2a061fec7aea4c7.png" alt="允许的应用"></p><h3 id="重新上传程序"><a href="#重新上传程序" class="headerlink" title="重新上传程序"></a>重新上传程序</h3><p>回到“上传模式”，还是之前的操作，输入刚才相同的代码，设置好“MQTT初始化参数”并点击连接设备，上传程序：</p><p><img src="https://upimage.alexhchu.com/2021/02/14/5bcf5776ef864.png" alt="最后连接代码.png"></p><p><img src="https://upimage.alexhchu.com/2021/02/14/6094de1e50bb0.png" alt="初始化物联网参数 - 副本.png"></p><p>上传成功后，我们可以观察到现在程序是可以走完的，最终显示为“MQTT连接成功”，此时我们可以通过访问MQTT网络服务器（本例子访问的是192.168.88.100:8080,具体操作按照自己电脑的ip地址进行访问），此时可以看到以下的信息。也可用之前提到的方法进行验证。</p><p><img src="https://img.imgdb.cn/item/6028831ad2a061fec7ad6412.png" alt="siot平台"></p><h1 id="究极方案"><a href="#究极方案" class="headerlink" title="究极方案"></a>究极方案</h1><p>如果你寻遍全网且上面的方案也对你没有帮助的话，就试试下面这个<code>究极方案</code>吧！</p><p>很简单，去控制面板把Windows防火墙关了就行：</p><p><img src="https://img.imgdb.cn/item/604e19df5aedab222c1fe2f6.png" alt="究极方案"></p><blockquote><p>我就是靠这个方案解决问题的！</p></blockquote><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><a class="btn-beautify button--animated blue larger" href="https://cdn.jsdelivr.net/gh/Amnesia-f/jsDelivr_CDN/post/%E6%8E%8C%E6%8E%A7%E6%9D%BF%E5%9C%A8%E4%B8%8A%E4%BC%A0%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5MQTT%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5%E4%BB%A3%E7%A0%81.sb3" title="测试代码下载链接"><i class="far fa-hand-point-right fa-fw"></i><span>测试代码下载链接</span></a><blockquote><p>希望以上的方法对你有帮助！</p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;SIoT是一种本地的物联网服务器，无需联网也能使用，但它却不如EasyIoT方便，这不前几天遇到了一个问题：掌控板死活连接不上SIoT。&lt;/</summary>
-      
-    
-    
-    
-    <category term="IoT物联网" scheme="https://amnesia-f.github.io/categories/IoT%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-    
-    <category term="物联网" scheme="https://amnesia-f.github.io/tags/%E7%89%A9%E8%81%94%E7%BD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打造U盘系统，Win10随身携带</title>
-    <link href="https://amnesia-f.github.io/posts/dfe935b2.html"/>
-    <id>https://amnesia-f.github.io/posts/dfe935b2.html</id>
-    <published>2021-02-13T16:01:04.000Z</published>
-    <updated>2021-02-14T02:38:06.382Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>说起U盘装系统，你第一时间想起的是什么？PE系统？今天给大家带来的教程是WinToGo制作方法，将 Win10 随身携带进U盘，在任何电脑上使用，不用再担心不适应别人的电脑系统了。</p><p>其实从Win8开始，就已经有Win to go了，但是官方的要求太严，制作起来并不是那么的友好，并且对系统的要求很严。所以使用WTG辅助工具来制作U盘。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="WTG辅助工具"><a href="#WTG辅助工具" class="headerlink" title="WTG辅助工具"></a>WTG辅助工具</h2><p><a href="https://www.ghpym.com/wtg.html">WTG辅助工具(WinToGo)v5.5.6</a>：“Windows To Go”，它可以让你将 Windows 完整安装到U盘、移动硬盘等便携设备上，…</p><h2 id="已解密esd系统镜像文件一个"><a href="#已解密esd系统镜像文件一个" class="headerlink" title="已解密esd系统镜像文件一个"></a>已解密esd系统镜像文件一个</h2><p>本站分享的系统，基本上都是esd文件格式的，很方便使用。本教程就不使用官方版本的镜像了，推荐使用第三方的系统。</p><p>目前推荐两个本站第三方系统</p><p>WIN10 SR4：<a href="https://www.ghpym.com/yoswin10rs4.html">https://www.ghpym.com/yoswin10rs4.html</a></p><p>WIN10 LTSC：<a href="https://www.ghpym.com/themrxkltsc1809.html">https://www.ghpym.com/themrxkltsc1809.html</a></p><p>最好使用LTSC版本的系统，因为这个为官方精简版，没有商店，小娜等，使用轻便，不升级。</p><h2 id="U盘一个"><a href="#U盘一个" class="headerlink" title="U盘一个"></a>U盘一个</h2><p>U盘读写速度直接影响到系统的性能。这儿推荐使用64G以上的容量，并且USB接口不低于3.0，2.0的U盘性能会大大降低。</p><p>当然如果是移动硬盘，最好使用固态的。</p><p>果核有两个固态移动硬盘，都是自己拼接的，一个是mSATA硬盘盒，USB3.1 ，一个m2固态，USB3.1 gen2，使用起来性能都相当的出色，和PC直接使用效果一样。</p><p>读写速度不要求太高，但是写速度至少你要50M以上，读取速度至少要100M以上才能避免卡顿。</p><h1 id="制作教程"><a href="#制作教程" class="headerlink" title="制作教程"></a>制作教程</h1><h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>下载辅助工具和镜像以后，选择esd文件：</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd271.png" alt="esd文件"></p><p>选择以后，选择esd里面的系统，并且在高级选择中，使用默认配置即可。最好是屏蔽本机硬盘，如果不屏蔽的话，本系统会看到原来电脑上的磁盘，并且占用D,E,F等常用盘符，修改起来麻烦。使用移动硬盘，如果有其他要用的分区，请勿勾选不格式化，取消勾选重新分区，还是建议格式化后再自己去分区。</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd27a.png" alt="部署文件"></p><p>部署以后，稍等会，就能使用了。</p><p>重启电脑，和使用PE一样，选择U盘启动即可，每台电脑U盘启动请自行百度。</p><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>使用移动硬盘制作的wintogo系统，难免需要分出几个盘供使用，制作好的系统，只有一个C盘，如何分区呢？</p><p>这时候，只需要正常的分区即可，在我的电脑-&gt;管理-&gt;磁盘管理器，压缩C盘，为C盘保留一部分，其他的盘就可以分成D,E,F等盘了</p><p><img src="https://img.imgdb.cn/item/6027eb98d2a061fec77dd281.png" alt="分区"></p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><blockquote><p>本文来自于<a href="https://www.ghpym.com/wintogodoc.html">果壳剥壳</a></p></blockquote><h1 id="End"><a href="#End" class="headerlink" title="End"></a>End</h1>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;说起U盘装系统，你第一时间想起的是什么？PE系统？今天给大家带来的教程是WinToGo制作方法，将 Win10 随身携带进U盘，在任何电脑上</summary>
-      
-    
-    
-    
-    <category term="技术教程" scheme="https://amnesia-f.github.io/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="技术教程" scheme="https://amnesia-f.github.io/tags/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    <category term="系统增强" scheme="https://amnesia-f.github.io/tags/%E7%B3%BB%E7%BB%9F%E5%A2%9E%E5%BC%BA/"/>
     
   </entry>
   
